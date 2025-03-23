@@ -6,4 +6,4 @@ setTimeout(() => {
   document.getElementById("loading-page").remove();
   loadingPage.remove("hidden");
   loadingPage.add("slide-down");
-}, 200);
+}, 1000);

@@ -7,7 +7,7 @@
 .loading-page .loading {
   margin: auto;
   font-size: 1rem;
-  color: lightgrey;
+  color: lightgrey !important;
 }
 
 .hiiden {
