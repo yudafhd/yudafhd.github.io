@@ -20,7 +20,7 @@
   </head>
   <body>
     <div id="loading-page" class="loading-page">
-      <div class="loading">please wait...</div>
+      <div class="loading">please wait-</div>
     </div>
 
     <header
@@ -71,28 +71,8 @@
       <a href="#" class="text-gray-700 py-1 text-sm">Services</a>
       <a href="#" class="text-gray-700 py-1 text-sm">Contact</a>
     </nav>
-
-    <script>
-      const menuBtn = document.getElementById("menu-btn");
-      const menuIcon = document.getElementById("menu-icon");
-      const navMenu = document.getElementById("nav-menu");
-      const closeIcon = document.getElementById("close-icon");
-
-      menuBtn.addEventListener("click", () => {
-        if (navMenu.classList.contains("hidden")) {
-          navMenu.classList.remove("hidden", "slide-up");
-          navMenu.classList.add("slide-down");
-        } else {
-          navMenu.classList.remove("slide-down");
-          navMenu.classList.add("slide-up");
-          setTimeout(() => navMenu.classList.add("hidden"), 300);
-        }
-        menuIcon.classList.toggle("hidden");
-        closeIcon.classList.toggle("hidden");
-      });
-
-      setTimeout(() => document.getElementById("loading-page").remove(), 2000);
-    </script>
+    <script src="./helpers/loading.js"></script>
+    <script src="./helpers/toggleMenu.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </body>
 </html>
