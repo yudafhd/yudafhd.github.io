@@ -19,7 +19,14 @@
     <title>Halaman Kosong</title>
   </head>
   <body>
-    <header class="text-gray-700 p-4 flex justify-between items-center">
+    <div id="loading-page" class="loading-page">
+      <div class="loading">please wait...</div>
+    </div>
+
+    <header
+      id="header-menu"
+      class="text-gray-700 p-4 flex justify-between items-center"
+    >
       <h1 class="text-sm font-bold">@yudafhd</h1>
       <button id="menu-btn" class="p-2 focus:outline-none">
         <svg
@@ -56,7 +63,7 @@
     </header>
 
     <nav
-      id="mobile-menu"
+      id="nav-menu"
       class="hidden absolute top-16 left-0 w-full flex flex-col items-center py-4 space-y-4"
     >
       <a href="#" class="text-gray-700 py-1 text-sm">Home</a>
@@ -67,22 +74,24 @@
 
     <script>
       const menuBtn = document.getElementById("menu-btn");
-      const menu = document.getElementById("mobile-menu");
       const menuIcon = document.getElementById("menu-icon");
+      const navMenu = document.getElementById("nav-menu");
       const closeIcon = document.getElementById("close-icon");
 
       menuBtn.addEventListener("click", () => {
-        if (menu.classList.contains("hidden")) {
-          menu.classList.remove("hidden", "slide-up");
-          menu.classList.add("slide-down");
+        if (navMenu.classList.contains("hidden")) {
+          navMenu.classList.remove("hidden", "slide-up");
+          navMenu.classList.add("slide-down");
         } else {
-          menu.classList.remove("slide-down");
-          menu.classList.add("slide-up");
-          setTimeout(() => menu.classList.add("hidden"), 300);
+          navMenu.classList.remove("slide-down");
+          navMenu.classList.add("slide-up");
+          setTimeout(() => navMenu.classList.add("hidden"), 300);
         }
         menuIcon.classList.toggle("hidden");
         closeIcon.classList.toggle("hidden");
       });
+
+      setTimeout(() => document.getElementById("loading-page").remove(), 2000);
     </script>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </body>
