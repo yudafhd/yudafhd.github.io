@@ -20,59 +20,88 @@
 
     <title>Halaman Kosong</title>
   </head>
-  <body>
+  <body class="bg-neutral-900">
     <div id="loading-page" class="loading-page">
-      <div class="loading">please wait-</div>
+      <div class="loading">loading</div>
     </div>
-
-    <header
-      id="header-menu"
-      class="text-gray-700 p-4 flex justify-between items-center"
+    <div
+      class="w-[90vw] display-flex m-auto min-h-screen bg-cover bg-no-repeat"
     >
-      <h1 class="text-sm font-bold">@yudafhd</h1>
-      <button id="menu-btn" class="p-2 focus:outline-none">
-        <svg
-          id="menu-icon"
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-6 w-6"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M4 6h16M4 12h16m-7 6h7"
-          />
-        </svg>
-        <svg
-          id="close-icon"
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-6 w-6 hidden"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M6 18L18 6M6 6l12 12"
-          />
-        </svg>
-      </button>
-    </header>
+      <header
+        id="header-menu"
+        class="p-2 pl-4 rounded-sm mt-5 flex justify-between items-center bg-neutral-800"
+      >
+        <h1 class="text-sm font-bold text-neutral-400">@yudafhd</h1>
+        <button id="menu-btn" class="p-2 text-neutral-400 focus:outline-none">
+          <svg
+            id="menu-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16m-7 6h7"
+            />
+          </svg>
+          <svg
+            id="close-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6 hidden"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
+      </header>
 
-    <nav
-      id="nav-menu"
-      class="hidden absolute top-16 left-0 w-full flex flex-col items-center py-4 space-y-4"
-    >
-      <a href="#" class="text-gray-700 py-1 text-sm">Home</a>
-      <a href="#" class="text-gray-700 py-1 text-sm">About</a>
-      <a href="#" class="text-gray-700 py-1 text-sm">Services</a>
-      <a href="#" class="text-gray-700 py-1 text-sm">Contact</a>
-    </nav>
+      <nav
+        id="nav-menu"
+        class="hidden absolute w-[90vw] top-16 left-0 flex flex-col items-center py-4 space-y-4 bg-neutral-800"
+      >
+        <a href="#" class="text-neutral-500 py-1 text-sm">About Me</a>
+        <a href="#" class="text-neutral-500 py-1 text-sm">Projects</a>
+        <a href="#" class="text-neutral-500 py-1 text-sm">Contacts</a>
+      </nav>
+      <div class="text-neutral-400 p-4 rounded-sm mt-3 bg-neutral-800">
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <h2 class="text-xl mb-2">Hi, Im Yuda</h2>
+            <p class="text-sm">
+              Software engineer from jakarta, Love to explore and research new
+              thing in Computer & Science 🫶🏻
+            </p>
+          </div>
+          <div class="flex justify-center">
+            <img
+              src="https://letsenhance.io/static/73136da51c245e80edc6ccfe44888a99/1015f/MainBefore.jpg"
+              alt="Circle Image"
+              class="rounded-full w-32 h-32 object-cover"
+            />
+          </div>
+        </div>
+        <div class="bg-neutral-700 mt-4 text-xs rounded-sm p-2">
+          all of my contact section
+        </div>
+        <div class="bg-neutral-700 mt-2 text-xs rounded-sm p-2">
+          carier section
+        </div>
+        <div class="bg-neutral-700 mt-2 text-xs rounded-sm p-2">
+          project i work
+        </div>
+      </div>
+    </div>
     <script src="./helpers/loading.js"></script>
     <script src="./helpers/toggleMenu.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
