@@ -1,9 +1,8 @@
-const loadingPage = document.getElementById("header-menu").classList;
+const headerMenu = document.getElementById("header-menu").classList;
 
-loadingPage.add("hidden");
+headerMenu.add("hidden");
 
 setTimeout(() => {
   document.getElementById("loading-page").remove();
-  loadingPage.remove("hidden");
-  loadingPage.add("slide-down");
+  headerMenu.remove("hidden");
 }, 1000);
