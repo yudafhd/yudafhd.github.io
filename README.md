@@ -1,1 +1,1 @@
-please checek https://yudafhd.github.io
+please check https://yudafhd.github.io
