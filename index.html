@@ -1,128 +1,372 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" class="scroll-smooth">
   <head>
-    <title>@yudafhd</title>
-
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Science & Tech Enthusiast" />
-    <meta name="keywords" content="HTML, CSS, JavaScript, Template" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@yudafhd — Software Engineer</title>
+
+    <!-- SEO basics -->
+    <meta name="description" content="Yuda Fahrudin — Software Engineer. I build delightful web experiences with Next.js, React, Laravel, and creative tooling." />
+    <meta name="keywords" content="Yuda Fahrudin, yudafhd, Software Engineer, Next.js, React, Laravel, Indonesia" />
     <meta name="author" content="@yudafhd" />
+    <link rel="canonical" href="https://yudafhd.github.io/" />
+    <meta name="theme-color" content="#0ea5e9" />
 
-    <meta property="og:title" content="@yudafhd" />
-    <meta property="og:description" content="A Science & Tech Enthusiast" />
-    <meta property="og:image" content="-" />
-    <meta property="og:url" content="-" />
+    <!-- Open Graph / Twitter -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="@yudafhd — Software Engineer" />
+    <meta property="og:description" content="Science & Tech enthusiast crafting apps with Next.js, React, and Laravel." />
+    <meta property="og:url" content="https://yudafhd.github.io/" />
+    <meta property="og:image" content="https://yudafhd.github.io/assets/og-image.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="@yudafhd — Software Engineer" />
+    <meta name="twitter:description" content="Science & Tech enthusiast crafting apps with Next.js, React, and Laravel." />
+    <meta name="twitter:image" content="https://yudafhd.github.io/assets/og-image.jpg" />
 
-    <link rel="icon" href="favicon.ico" type="image/x-icon" />
-    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
-    <link rel="stylesheet" href="styles.css" />
+    <!-- Icons -->
+    <link rel="icon" href="./assets/favicon.ico" />
+    <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png" />
 
-    <title>Halaman Kosong</title>
-  </head>
-  <body class="bg-zinc-900">
-    <!-- loading section -->
-    <div id="loading-page" class="loading-page">
-      <div class="loading">loading</div>
-    </div>
-
-    <!-- main section -->
-    <div
-      class="w-[90vw] lg:w-[33vw] display-flex m-auto min-h-screen bg-cover bg-no-repeat"
-    >
-      <header
-        id="header-menu"
-        class="p-2 pl-4 border-b-2 border-zinc-200 rounded-t-sm mt-5 flex justify-between items-center bg-zinc-100"
-      >
-        <h1 class="text-sm font-bold text-cyan-800">@yudafhd</h1>
-        <a
-          id="menu-btn"
-          href="https://wa.me/085708880099"
-          class="p-2 text-sm font-bold underline text-cyan-800 focus:outline-none"
-        >
-          wa.me
-        </a>
-      </header>
-      <div class="text-cyan-800 p-4 rounded-b-sm bg-zinc-100">
-        <div class="grid grid-cols-2 gap-">
-          <div>
-            <h2 class="text-xl mb-1">Hi, Im Yuda</h2>
-            <p class="text-sm">
-              Software engineer, I love to explore and research new thing in
-              Computer & Science 🫶🏻
-            </p>
-          </div>
-          <div class="flex justify-center">
-            <img
-              src="./assets/30807550.jpeg"
-              alt="Circle Image"
-              class="rounded-full w-28 h-28 object-cover"
-            />
-          </div>
-        </div>
-        <div class="border-t-1 border-zinc-300 mt-4 text-xs p-2">
-          Contact
-        </div>
-        <a target="_blank" href="https://www.linkedin.com/in/yudafahrudin">
-          <div
-            class="bg-sky-700 font-bold text-center text-white mt-1 text-xs rounded-sm p-2"
-          >
-            Linkedin
-          </div>
-        </a>
-        <a target="_blank" href="mailto:ahmadyudafahrudin@gmail.com">
-          <div
-            class="bg-red-700 font-bold text-center text-white mt-1 text-xs rounded-sm p-2"
-          >
-            ahmadyudafahrudin@gmail.com
-          </div>
-        </a>
-        <a target="_blank" href="https://github.com/yudafhd">
-          <div
-            class="bg-zinc-700 font-bold text-center text-white mt-1 text-xs rounded-sm p-2"
-          >
-            Github
-          </div>
-        </a>
-        <div class="border-t-1 border-zinc-300 mt-4 text-xs p-2">
-          Experience
-        </div>
-
-        <div>
-          <span
-            class="bg-gray-200 text-gray-800 px-2 py-1 rounded-full text-xs mr-1"
-          >
-            NextJS
-          </span>
-
-          <span
-            class="bg-black text-green-300 px-2 py-1 rounded-full text-xs mr-1"
-          >
-            NodeJS
-          </span>
-          <span
-            class="bg-blue-600 text-white px-2 py-1 rounded-full text-xs mr-1"
-          >
-            ReactJS & Native
-          </span>
-
-          <span
-            class="bg-orange-600 text-white px-2 py-1 rounded-full text-xs mr-1"
-          >
-            Laravel
-          </span>
-          <span
-            class="text-black px-2 py-1 underline rounded-full text-xs mr-1"
-          >
-            <a target="_blank" href="https://www.linkedin.com/in/yudafahrudin">
-              more >
-            </a>
-          </span>
-        </div>
-        <!-- <div class="border-t-1 border-zinc-300 mt-4 text-xs p-2">Projects</div> -->
-      </div>
-    </div>
-    <script src="./helpers/loading.js"></script>
+    <!-- Tailwind (browser) -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+
+    <style>
+      /* Subtle animated gradient for the background */
+      @keyframes gradientShift { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; }}
+      .bg-animated {
+        background: radial-gradient(120% 70% at 10% 0%, rgba(14,165,233,.3), transparent 60%),
+                    radial-gradient(120% 70% at 90% 0%, rgba(139,92,246,.25), transparent 60%),
+                    linear-gradient(135deg, #0ea5e9, #6366f1, #8b5cf6);
+        background-size: 200% 200%;
+        animation: gradientShift 18s ease infinite;
+      }
+      /* Glass card */
+      .glass { backdrop-filter: blur(10px); background: rgba(255,255,255,.75); }
+      .dark .glass { background: rgba(24,24,27,.6); border-color: rgba(255,255,255,.08); }
+      /* Simple fade-in */
+      .fade-in { opacity: 0; transform: translateY(8px); transition: opacity .6s ease, transform .6s ease; }
+      .fade-in.show { opacity: 1; transform: translateY(0); }
+    </style>
+    <script>
+      // Prefer user's OS color scheme; allow ?theme=dark|light override
+      (function(){
+        const params = new URLSearchParams(location.search);
+        const forced = params.get('theme');
+        const preferDark = forced ? forced === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.classList.toggle('dark', preferDark);
+      })();
+    </script>
+  </head>
+
+  <body class="min-h-screen bg-zinc-900 text-zinc-800 dark:text-zinc-100 bg-animated">
+    <!-- Page wrapper -->
+    <div class="mx-auto max-w-screen-sm px-4 py-10 md:py-16">
+      <!-- Header / Nav -->
+      <header class="glass border border-zinc-200 dark:border-zinc-800 rounded-2xl p-4 md:p-5 shadow-sm">
+        <div class="flex items-center justify-between ">
+          <div class="flex items-center gap-3">
+          <img src="./assets/photo-profile.jpeg" alt="Foto Yuda" class="w-12 h-12 rounded-full object-cover ring-2 ring-white/80 dark:ring-black/40" />
+          <div>
+            <h1 class="text-lg md:text-xl font-semibold tracking-tight">Hi, Im Yuda 👋</h1>
+            <p class="text-xs md:text-sm text-zinc-500 dark:text-zinc-400">Software Engineer • Science & Tech Enthusiast</p>
+          </div>
+        </div>
+        <nav class="flex items-center gap-2 md:gap-3">
+          <a href="mailto:ahmadyudafahrudin@gmail.com" class="inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-xs font-medium bg-zinc-900 text-white dark:bg-white dark:text-zinc-900 hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-cyan-400">
+            <span>Email</span>
+          </a>
+          <a href="https://wa.me/085708880099" class="hidden sm:inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-xs font-medium bg-cyan-600 text-white hover:bg-cyan-500 focus:outline-none focus:ring-2 focus:ring-cyan-400" target="_blank" rel="noopener">WA</a>
+        </nav>
+        </div>
+        <div class="mt-5">
+          <p class="mt-2 text-sm md:text-base text-zinc-600 dark:text-zinc-300">
+            I love to explore and research new thing in Computer & Science 🫶🏻.
+          </p>
+        </div>
+      </header>
+
+      <!-- Quick Links -->
+      <section class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <a class="fade-in glass border 
+        border-zinc-200 dark:border-zinc-800 rounded-xl p-4 py-2
+        hover:scale-[1.01] 
+        transition" href="https://github.com/yudafhd" 
+        target="_blank" rel="noopener">
+          <div class="flex items-center justify-between">
+              <p class="font-semibold">GitHub</p>
+            <span aria-hidden class="text-2xl">📦</span>
+          </div>
+        </a>
+        <a class="fade-in glass border 
+        border-zinc-200 dark:border-zinc-800 rounded-xl p-4 py-2
+        hover:scale-[1.01] transition"
+         href="https://www.linkedin.com/in/yudafahrudin" 
+         target="_blank" rel="noopener">
+          <div class="flex items-center justify-between">
+              <h3 class="font-semibold">LinkedIn</h3>
+            <span aria-hidden class="text-2xl">💼</span>
+          </div>
+        </a>
+      </section>
+
+
+      <!-- SKILLS -->
+      <section class="mt-8 md:mt-10">
+        <h2 class="text-sm uppercase tracking-wide text-gray-200">SKILLS</h2>
+        <div class="mt-3 grid grid-cols-1 gap-4">
+          <div class="glass border border-zinc-200 dark:border-zinc-800 rounded-xl p-4">
+            <h3 class="font-semibold text-sm">Core Stack</h3>
+            <div class="mt-2 flex flex-wrap gap-2 text-xs">
+              <span class="px-2 py-1 rounded-full bg-zinc-900 text-white dark:bg-white dark:text-zinc-900">TypeScript</span>
+              <span class="px-2 py-1 rounded-full bg-cyan-100 text-cyan-800 dark:bg-cyan-900/40 dark:text-cyan-300">React.js</span>
+              <span class="px-2 py-1 rounded-full bg-cyan-100 text-cyan-800 dark:bg-cyan-900/40 dark:text-cyan-300">Next.js</span>
+              <span class="px-2 py-1 rounded-full bg-emerald-100 text-emerald-800 dark:bg-emerald-900/40 dark:text-emerald-300">Node.js</span>
+              <span class="px-2 py-1 rounded-full bg-indigo-100 text-indigo-800 dark:bg-indigo-900/40 dark:text-indigo-300">GraphQL</span>
+              <span class="px-2 py-1 rounded-full bg-orange-100 text-orange-800 dark:bg-orange-900/40 dark:text-orange-300">REST APIs</span>
+              <span class="px-2 py-1 rounded-full bg-zinc-200 text-zinc-800 dark:bg-zinc-800 dark:text-zinc-200">Jest</span>
+              <span class="px-2 py-1 rounded-full bg-zinc-200 text-zinc-800 dark:bg-zinc-800 dark:text-zinc-200">Git & Code Review</span>
+              <span class="px-2 py-1 rounded-full bg-zinc-200 text-zinc-800 dark:bg-zinc-800 dark:text-zinc-200">SQL / Query Writing</span>
+              <span class="px-2 py-1 rounded-full bg-fuchsia-100 text-fuchsia-800 dark:bg-fuchsia-900/40 dark:text-fuchsia-300">Design System (ANTD)</span>
+              <span class="px-2 py-1 rounded-full bg-sky-100 text-sky-800 dark:bg-sky-900/40 dark:text-sky-300">UI/UX Engineering</span>
+            </div>
+          </div>
+          <div class="glass border border-zinc-200 dark:border-zinc-800 rounded-xl p-4">
+            <h3 class="font-semibold text-sm">Supporting</h3>
+            <div class="mt-2 flex flex-wrap gap-2 text-xs">
+              <span class="px-2 py-1 rounded-full bg-indigo-100 text-indigo-800 dark:bg-indigo-900/40 dark:text-indigo-300">React Native</span>
+              <span class="px-2 py-1 rounded-full bg-red-100 text-red-800 dark:bg-red-900/40 dark:text-red-300">Angular / AngularJS</span>
+              <span class="px-2 py-1 rounded-full bg-rose-100 text-rose-800 dark:bg-rose-900/40 dark:text-rose-300">Ruby on Rails (API)</span>
+              <span class="px-2 py-1 rounded-full bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-300">Performance Optimization</span>
+              <span class="px-2 py-1 rounded-full bg-emerald-100 text-emerald-800 dark:bg-emerald-900/40 dark:text-emerald-300">Authentication (PrivyID, OAuth)</span>
+              <span class="px-2 py-1 rounded-full bg-sky-100 text-sky-800 dark:bg-sky-900/40 dark:text-sky-300">GCP (basic)</span>
+            </div>
+          </div>
+          <div class="glass border border-zinc-200 dark:border-zinc-800 rounded-xl p-4">
+            <h3 class="font-semibold text-sm">Domain</h3>
+            <div class="mt-2 flex flex-wrap gap-2 text-xs">
+              <span class="px-2 py-1 rounded-full bg-teal-100 text-teal-800 dark:bg-teal-900/40 dark:text-teal-300">Healthcare: EMR, SIMRS</span>
+              <span class="px-2 py-1 rounded-full bg-teal-100 text-teal-800 dark:bg-teal-900/40 dark:text-teal-300">SatuSehat</span>
+              <span class="px-2 py-1 rounded-full bg-blue-100 text-blue-800 dark:bg-blue-900/40 dark:text-blue-300">E-commerce Logistics</span>
+              <span class="px-2 py-1 rounded-full bg-violet-100 text-violet-800 dark:bg-violet-900/40 dark:text-violet-300">Insurance Membership</span>
+              <span class="px-2 py-1 rounded-full bg-stone-100 text-stone-800 dark:bg-stone-900/40 dark:text-stone-300">Construction</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Featured / Projects (placeholder—you can swap links later) -->
+      <section class="mt-6 md:mt-8">
+        <h2 class="text-sm uppercase tracking-wide text-gray-200">PROJECTS</h2>
+        <div class="mt-3 grid grid-cols-1 gap-4">
+          <a class="fade-in glass border border-zinc-200 dark:border-zinc-800 rounded-xl p-4 hover:scale-[1.01] transition block" href="https://www.volaroid.com" target="_blank" rel="noopener">
+            <div class="flex items-start justify-between gap-2">
+              <div>
+                <h3 class="font-semibold">Volaroid (Content Creator Tools)</h3>
+                <p class="text-sm text-zinc-500 dark:text-zinc-400">Web-based creative tools: filters, grids, reels templates.</p>
+              </div>
+              <span aria-hidden class="text-2xl">✨</span>
+            </div>
+          </a>
+          <a class="fade-in glass border border-zinc-200 dark:border-zinc-800 rounded-xl p-4 hover:scale-[1.01] transition block" href="https://gears.cloud" target="_blank" rel="noopener">
+            <div class="flex items-start justify-between gap-2">
+              <div>
+                <h3 class="font-semibold">Gears Cloud (Business Tools)</h3>
+                <p class="text-sm text-zinc-500 dark:text-zinc-400">All-in-one dev/design utilities: formatters, converters, etc.</p>
+              </div>
+              <span aria-hidden class="text-2xl">⚙️</span>
+            </div>
+          </a>
+          <a class="fade-in glass border border-zinc-200 dark:border-zinc-800 rounded-xl p-4 hover:scale-[1.01] transition block" href="https://talkactivetome.vercel.app/" target="_blank" rel="noopener">
+            <div class="flex items-start justify-between gap-2">
+              <div>
+                <h3 class="font-semibold">Talkative To Me (AI Interview Project)</h3>
+                <p class="text-sm text-zinc-500 dark:text-zinc-400">
+                  A web app for AI-based interview practice: dynamic questions, timer,
+                  real-time transcripts, automatic scoring and feedback, answer summary (STAR),
+                  and results recap for easy progress tracking.
+                </p>
+
+              </div>
+              <span aria-hidden class="text-2xl">⚙️</span>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <!-- ================== APPENDED CONTENT START ================== -->
+      <!-- EXPERIENCE -->
+  <section class="mt-8 md:mt-10">
+  <h2 class="text-sm uppercase tracking-wide text-gray-200">EXPERIENCE</h2>
+  <div class="mt-3 space-y-3">
+
+    <!-- IHC -->
+    <article class="glass border border-zinc-200 dark:border-zinc-800 rounded-xl p-4">
+      <header class="flex items-start justify-between gap-3">
+        <div>
+          <h3 class="font-semibold">Software Engineer — PT Pertamina Bina Medika IHC</h3>
+          <p class="text-xs text-zinc-500 dark:text-zinc-400">Feb 2024 – Present · Indonesia (Hybrid)</p>
+        </div>
+        <span class="text-xl" aria-hidden>🏥</span>
+      </header>
+      <ul class="mt-2 list-disc list-inside text-sm text-zinc-600 dark:text-zinc-300 space-y-1">
+        <li>Developed EMR modules for SIMRS (Inpatient Initial Assessment, CPPT, etc.).</li>
+        <li>Built <strong>SatuSehat</strong> verification module.</li>
+        <li>Created a scalable Design System using <strong>Ant Design (ANTD)</strong>.</li>
+        <li>Optimized performance and developer experience using <strong>Next.js</strong>.</li>
+        <li>Performed code reviews to ensure clean code and detect code smells.</li>
+        <li>Conducted R&D and collaborated to achieve the best UI/UX design.</li>
+      </ul>
+      <p class="mt-2 text-xs text-zinc-500 dark:text-zinc-400">
+        Skills: Software Design · React.js · Software Infrastructure · Next.js · Git · TypeScript · GCP · Query Writing · Web Applications
+      </p>
+    </article>
+
+    <!-- Rey -->
+    <article class="glass border border-zinc-200 dark:border-zinc-800 rounded-xl p-4">
+      <header class="flex items-start justify-between gap-3">
+        <div>
+          <h3 class="font-semibold">Associate Software Engineer — Rey.id</h3>
+          <p class="text-xs text-zinc-500 dark:text-zinc-400">Jan 2023 – Dec 2023 · Jakarta (Remote)</p>
+        </div>
+        <span class="text-xl" aria-hidden>🏥</span>
+      </header>
+      <ul class="mt-2 list-disc list-inside text-sm text-zinc-600 dark:text-zinc-300 space-y-1">
+        <li>Built a business dashboard using <strong>Next.js</strong>.</li>
+        <li>Contributed to the design system and UI components.</li>
+        <li>Optimized payment page usability and conversion rate.</li>
+        <li>Enhanced web and mobile responsiveness of the main page.</li>
+        <li>Implemented unit testing with <strong>Jest</strong> and performed regular code reviews.</li>
+      </ul>
+      <p class="mt-2 text-xs text-zinc-500 dark:text-zinc-400">
+        Skills: GraphQL · React.js · Next.js · Git · TypeScript · Web Applications
+      </p>
+    </article>
+
+    <!-- SIRCLO -->
+    <article class="glass border border-zinc-200 dark:border-zinc-800 rounded-xl p-4">
+      <header class="flex items-start justify-between gap-3">
+        <div>
+          <h3 class="font-semibold">Associate Software Engineer — SIRCLO</h3>
+          <p class="text-xs text-zinc-500 dark:text-zinc-400">Aug 2021 – Jan 2023 · Tangerang (Remote)</p>
+        </div>
+        <span class="text-xl" aria-hidden>🛒</span>
+      </header>
+      <ul class="mt-2 list-disc list-inside text-sm text-zinc-600 dark:text-zinc-300 space-y-1">
+        <li>Improved shipping address logic and optimized the shipping page UI.</li>
+        <li>Refined <strong>PrivyID</strong> integration flow.</li>
+        <li>Developed and maintained reusable UI components.</li>
+        <li>Implemented unit tests with <strong>Jest</strong> and built API Gateway using <strong>Apollo GraphQL</strong>.</li>
+      </ul>
+      <p class="mt-2 text-xs text-zinc-500 dark:text-zinc-400">
+        Skills: GraphQL · Node.js · REST APIs · React Hooks · React.js · JavaScript · Git · TypeScript · Web Applications
+      </p>
+    </article>
+
+    <!-- Wave -->
+    <article class="glass border border-zinc-200 dark:border-zinc-800 rounded-xl p-4">
+      <header class="flex items-start justify-between gap-3">
+        <div>
+          <h3 class="font-semibold">Frontend Developer — Wave Consulting Indonesia</h3>
+          <p class="text-xs text-zinc-500 dark:text-zinc-400">Jul 2019 – Aug 2021 · Jakarta (Remote)</p>
+        </div>
+        <span class="text-xl" aria-hidden>📊</span>
+      </header>
+      <ul class="mt-2 list-disc list-inside text-sm text-zinc-600 dark:text-zinc-300 space-y-1">
+        <li>Built an accounting product using <strong>Angular 11</strong>.</li>
+        <li>Developed mobile features using <strong>React Native</strong>.</li>
+      </ul>
+      <p class="mt-2 text-xs text-zinc-500 dark:text-zinc-400">
+        Skills: Angular · AngularJS · React Native · TypeScript · REST APIs
+      </p>
+    </article>
+
+    <!-- Twiscode -->
+    <article class="glass border border-zinc-200 dark:border-zinc-800 rounded-xl p-4">
+      <header class="flex items-start justify-between gap-3">
+        <div>
+          <h3 class="font-semibold">Full Stack Developer — Twiscode</h3>
+          <p class="text-xs text-zinc-500 dark:text-zinc-400">Nov 2018 – Jul 2019 · Surabaya (On-site)</p>
+        </div>
+        <span class="text-xl" aria-hidden>🧩</span>
+      </header>
+      <ul class="mt-2 list-disc list-inside text-sm text-zinc-600 dark:text-zinc-300 space-y-1">
+        <li>Developed multiple projects using <strong>React.js</strong> and <strong>Node.js</strong>.</li>
+      </ul>
+      <p class="mt-2 text-xs text-zinc-500 dark:text-zinc-400">
+        Skills: Node.js · REST APIs · React.js · Redux · JavaScript · Git
+      </p>
+    </article>
+
+    <!-- Hubble -->
+    <article class="glass border border-zinc-200 dark:border-zinc-800 rounded-xl p-4">
+      <header class="flex items-start justify-between gap-3">
+        <div>
+          <h3 class="font-semibold">React Native Developer — Hubble</h3>
+          <p class="text-xs text-zinc-500 dark:text-zinc-400">Nov 2017 – Oct 2018 · Singapore (Remote)</p>
+        </div>
+        <span class="text-xl" aria-hidden>🏗️</span>
+      </header>
+      <ul class="mt-2 list-disc list-inside text-sm text-zinc-600 dark:text-zinc-300 space-y-1">
+        <li>Fixed bugs and maintained <strong>React Native</strong> mobile applications.</li>
+        <li>Supported and maintained several APIs built with <strong>Ruby on Rails</strong>.</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+      <!-- ================== APPENDED CONTENT END ================== -->
+
+      <!-- Footer -->
+      <footer class="mt-8 md:mt-12 text-center text-xs text-gray-200">
+        <p>© <span id="year"></span> @yudafhd · Made by ❤️, Tailwind, and coffe.</p>
+        <p class="mt-2"><a class="underline underline-offset-4 hover:text-cyan-400" href="mailto:ahmadyudafahrudin@gmail.com">Email</a> · <a class="underline underline-offset-4 hover:text-cyan-400" href="https://wa.me/085708880099" target="_blank" rel="noopener">WhatsApp</a></p>
+      </footer>
+    </div>
+
+    <!-- JSON-LD Person Schema (existing) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Yuda Fahrudin",
+      "url": "https://yudafhd.github.io/",
+      "image": "https://yudafhd.github.io/assets/30807550.jpeg",
+      "jobTitle": "Software Engineer",
+      "sameAs": [
+        "https://github.com/yudafhd",
+        "https://www.linkedin.com/in/yudafahrudin"
+      ]
+    }
+    </script>
+
+    <!-- APPENDED: Structured data for Work Experience (kept separate to avoid changing the existing block) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Work Experience of Yuda Fahrudin",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "item": {"@type": "Organization", "name": "PT Pertamina Bina Medika IHC", "employee": {"@type": "Person", "name": "Yuda Fahrudin"}, "sameAs": "https://ihc.id/"}},
+        {"@type": "ListItem", "position": 2, "item": {"@type": "Organization", "name": "Rey.id"}},
+        {"@type": "ListItem", "position": 3, "item": {"@type": "Organization", "name": "SIRCLO"}},
+        {"@type": "ListItem", "position": 4, "item": {"@type": "Organization", "name": "Wave Consulting Indonesia"}},
+        {"@type": "ListItem", "position": 5, "item": {"@type": "Organization", "name": "Twiscode"}},
+        {"@type": "ListItem", "position": 6, "item": {"@type": "Organization", "name": "Hubble"}}
+      ]
+    }
+    </script>
+
+    <!-- Tiny helpers -->
+    <script>
+      // year
+      document.getElementById('year').textContent = new Date().getFullYear();
+      // reveal
+      window.addEventListener('load', () => {
+        document.querySelectorAll('.fade-in').forEach((el, i) => {
+          setTimeout(() => el.classList.add('show'), 80 * i);
+        });
+      });
+    </script>
   </body>
 </html>
