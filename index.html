@@ -10,7 +10,7 @@
     <meta name="keywords" content="Yuda Fahrudin, yudafhd, Software Engineer, Next.js, React, Laravel, Indonesia" />
     <meta name="author" content="@yudafhd" />
     <link rel="canonical" href="https://yudafhd.github.io/" />
-    <meta name="theme-color" content="#0ea5e9" />
+    <meta name="theme-color" content="#ff5f5d" />
 
     <!-- Open Graph / Twitter -->
     <meta property="og:type" content="website" />
@@ -29,298 +29,555 @@
 
     <!-- Tailwind (browser) -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+   
+   <style>
+      @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap');
 
-
-    <style>
-      /* Subtle animated gradient for the background */
-      @keyframes gradientShift { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; }}
-      .bg-animated {
-        background: radial-gradient(120% 70% at 10% 0%, rgba(14,165,233,.3), transparent 60%),
-                    radial-gradient(120% 70% at 90% 0%, rgba(139,92,246,.25), transparent 60%),
-                    linear-gradient(135deg, #0ea5e9, #6366f1, #8b5cf6);
-        background-size: 200% 200%;
-        animation: gradientShift 18s ease infinite;
+      :root {
+        --neo-bg: #f6f1ff;
+        --neo-surface: #fffaf4;
+        --neo-surface-alt: #ffe3d3;
+        --neo-primary: #ff5f5d;
+        --neo-secondary: #3d5af1;
+        --neo-accent: #20c997;
+        --neo-shadow: #1c1c1c;
+        --neo-text: #181818;
       }
-      /* Glass card */
-      .glass { backdrop-filter: blur(10px); background: rgba(255,255,255,.75); }
-      .dark .glass { background: rgba(24,24,27,.6); border-color: rgba(255,255,255,.08); }
-      /* Simple fade-in */
-      .fade-in { opacity: 0; transform: translateY(8px); transition: opacity .6s ease, transform .6s ease; }
-      .fade-in.show { opacity: 1; transform: translateY(0); }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        min-height: 100vh;
+        font-family: 'Space Grotesk', 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        background-color: var(--neo-bg);
+        color: var(--neo-text);
+        position: relative;
+        overflow-x: hidden;
+      }
+
+      .dark body {
+        background-color: #0d0d0d;
+        color: #f8f8f8;
+      }
+
+      .dark body::before {
+        background-image:
+          linear-gradient(90deg, rgba(248, 248, 248, 0.08) 1px, transparent 1px),
+          linear-gradient(180deg, rgba(248, 248, 248, 0.08) 1px, transparent 1px);
+      }
+
+      a {
+        color: inherit;
+      }
+
+      a:hover {
+        color: var(--neo-secondary);
+      }
+
+      .neo-shell {
+        position: relative;
+        z-index: 1;
+      }
+
+      .neo-card {
+        background: var(--neo-surface);
+        border: 3px solid var(--neo-shadow);
+        border-radius: 24px;
+        box-shadow: 6px 6px 0 0 var(--neo-shadow);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .neo-card:hover {
+        transform: translate(-4px, -4px);
+        box-shadow: 10px 10px 0 0 var(--neo-shadow);
+      }
+
+      .neo-card[data-tone="alt"] {
+        background: var(--neo-surface-alt);
+      }
+
+      .dark .neo-card {
+        background: #141414;
+        border-color: #f8f8f8;
+        box-shadow: 6px 6px 0 0 #f8f8f8;
+      }
+
+      .dark .neo-card[data-tone="alt"] {
+        background: #1f1f1f;
+      }
+
+      .neo-chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        background: var(--neo-surface);
+        border: 2px solid var(--neo-shadow);
+        border-radius: 9999px;
+        padding: 0.35rem 0.85rem;
+        box-shadow: 4px 4px 0 0 var(--neo-shadow);
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+
+      .neo-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.6rem;
+        background: var(--neo-primary);
+        border: 3px solid var(--neo-shadow);
+        color: #fff;
+        border-radius: 9999px;
+        padding: 0.65rem 1.3rem;
+        font-weight: 600;
+        letter-spacing: 0.02em;
+        box-shadow: 4px 4px 0 0 var(--neo-shadow);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .neo-btn:hover {
+        transform: translate(-2px, -2px);
+        box-shadow: 6px 6px 0 0 var(--neo-shadow);
+      }
+
+      .neo-btn.secondary {
+        background: var(--neo-secondary);
+      }
+
+      .neo-btn.ghost {
+        background: var(--neo-surface);
+        color: var(--neo-shadow);
+      }
+
+      .dark .neo-btn.ghost {
+        background: #181818;
+        color: #f8f8f8;
+      }
+
+      .neo-toggle {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.55rem;
+        padding: 0.45rem 0.95rem;
+        border: 3px solid var(--neo-shadow);
+        border-radius: 9999px;
+        background: var(--neo-surface);
+        box-shadow: 4px 4px 0 0 var(--neo-shadow);
+        font-size: 0.85rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .neo-toggle:hover {
+        transform: translate(-2px, -2px);
+        box-shadow: 6px 6px 0 0 var(--neo-shadow);
+      }
+
+      .neo-toggle:focus-visible {
+        outline: 3px solid var(--neo-secondary);
+        outline-offset: 3px;
+      }
+
+      .neo-toggle-icon {
+        font-size: 1.1rem;
+        line-height: 1;
+      }
+
+      .dark .neo-toggle {
+        background: #181818;
+        color: #f8f8f8;
+        border-color: #f8f8f8;
+        box-shadow: 4px 4px 0 0 #f8f8f8;
+      }
+
+      .neo-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        border-bottom: 2px solid var(--neo-shadow);
+        padding-bottom: 0.1rem;
+        font-weight: 500;
+      }
+
+      .neo-link:hover {
+        color: var(--neo-secondary);
+        border-color: var(--neo-secondary);
+      }
+
+      .neo-section-title {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        font-size: 1.1rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        border: 2px solid var(--neo-shadow);
+        padding: 0.35rem 0.8rem;
+        border-radius: 9999px;
+        background: var(--neo-surface);
+        box-shadow: 4px 4px 0 0 var(--neo-shadow);
+      }
+
+      .neo-tag-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.6rem;
+      }
+
+      .neo-tag {
+        background: var(--neo-surface);
+        border: 2px solid var(--neo-shadow);
+        border-radius: 14px;
+        padding: 0.4rem 0.85rem;
+        font-size: 0.8rem;
+        font-weight: 500;
+        box-shadow: 3px 3px 0 0 var(--neo-shadow);
+      }
+
+      .neo-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        padding: 0.35rem 0.8rem;
+        border-radius: 9999px;
+        border: 2px solid var(--neo-shadow);
+        background: var(--neo-surface);
+        font-size: 0.75rem;
+        font-weight: 500;
+        box-shadow: 3px 3px 0 0 var(--neo-shadow);
+      }
+
+      .neo-highlight {
+        background: var(--neo-surface-alt);
+        border: 3px solid var(--neo-shadow);
+        border-radius: 18px;
+        padding: 0.75rem 1rem;
+        box-shadow: 5px 5px 0 0 var(--neo-shadow);
+      }
+
+      .neo-divider {
+        display: block;
+        height: 4px;
+        width: 100%;
+        background: repeating-linear-gradient(90deg, var(--neo-shadow) 0, var(--neo-shadow) 12px, transparent 12px, transparent 22px);
+        margin: 0;
+      }
+
+      .neo-hero {
+        display: grid;
+        gap: 1.5rem;
+      }
+
+      @media (min-width: 900px) {
+        .neo-hero {
+          grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+          align-items: center;
+        }
+      }
+
+      .neo-avatar {
+        border: 3px solid var(--neo-shadow);
+        border-radius: 32px;
+        box-shadow: 8px 8px 0 0 var(--neo-shadow);
+        object-fit: cover;
+      }
+
+      .dark .neo-avatar {
+        border-color: #f8f8f8;
+        box-shadow: 8px 8px 0 0 #f8f8f8;
+      }
+
+      .neo-section {
+        display: grid;
+        gap: 1.5rem;
+      }
+
+      .neo-grid {
+        display: grid;
+        gap: 1.2rem;
+      }
+
+      @media (min-width: 768px) {
+        .neo-grid.two {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .neo-grid.three {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+      }
+
+      .fade-in {
+        opacity: 0;
+        transform: translateY(10px);
+        transition: opacity 0.5s ease, transform 0.5s ease;
+      }
+
+      .fade-in.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
     </style>
-    <script>
-      // Prefer user's OS color scheme; allow ?theme=dark|light override
-      (function(){
-        const params = new URLSearchParams(location.search);
-        const forced = params.get('theme');
-        const preferDark = forced ? forced === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
-        document.documentElement.classList.toggle('dark', preferDark);
-      })();
-    </script>
   </head>
 
-  <body class="min-h-screen bg-zinc-900 text-zinc-800 dark:text-zinc-100 bg-animated">
-    <!-- Page wrapper -->
-    <div class="mx-auto max-w-screen-sm px-4 py-10 md:py-16">
-      <!-- Header / Nav -->
-      <header class="glass border border-zinc-200 dark:border-zinc-800 rounded-2xl p-4 md:p-5 shadow-sm">
-        <div class="flex items-center justify-between ">
-          <div class="flex items-center gap-3">
-          <img src="./assets/photo-profile.jpeg" alt="Foto Yuda" class="w-12 h-12 rounded-full object-cover ring-2 ring-white/80 dark:ring-black/40" />
-          <div>
-            <h1 class="text-lg md:text-xl font-semibold tracking-tight">Hi, Im Yuda 👋</h1>
-            <p class="text-xs md:text-sm text-zinc-500 dark:text-zinc-400">Software Engineer • Science & Tech Enthusiast</p>
+  <body class="antialiased light">
+    <div class="neo-shell mx-auto max-w-5xl px-6 py-12 md:py-16 space-y-12">
+      <header class="neo-card neo-hero p-6 md:p-8 fade-in">
+        <div class="space-y-6">
+          <div class="flex w-full flex-wrap items-center justify-between gap-3">
+            <div class="flex flex-wrap items-center gap-3">
+              <span class="neo-chip">Yuda Fahrudin</span>
+              <span class="neo-pill">Software Engineer</span>
+            </div>
           </div>
-        </div>
-        <nav class="flex items-center gap-2 md:gap-3">
-          <a href="mailto:ahmadyudafahrudin@gmail.com" class="inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-xs font-medium bg-zinc-900 text-white dark:bg-white dark:text-zinc-900 hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-cyan-400">
-            <span>Email</span>
-          </a>
-          <a href="https://wa.me/085708880099" class="hidden sm:inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-xs font-medium bg-cyan-600 text-white hover:bg-cyan-500 focus:outline-none focus:ring-2 focus:ring-cyan-400" target="_blank" rel="noopener">WA</a>
-        </nav>
-        </div>
-        <div class="mt-5">
-          <p class="mt-2 text-sm md:text-base text-zinc-600 dark:text-zinc-300">
-            I love to explore and research new thing in Computer & Science 🫶🏻.
+          <h1 class="text-3xl md:text-5xl font-bold leading-tight tracking-tight">
+            Crafting bold, playful product experiences for the web.
+          </h1>
+          <p class="text-base md:text-lg leading-relaxed">
+            I love to explore and research new thing in Computer &amp; Science 🫶🏻. Currently focused on building performant React/Next.js apps and translating ideas into friendly interfaces.
           </p>
+          <div class="flex flex-wrap gap-3">
+            <a href="mailto:ahmadyudafahrudin@gmail.com" class="neo-btn">Email</a>
+            <a href="https://www.linkedin.com/in/yudafahrudin" class="neo-btn secondary" target="_blank" rel="noopener">Linkedin</a>
+            <a href="https://github.com/yudafhd" class="neo-btn ghost" target="_blank" rel="noopener">GitHub</a>
+          </div>
+          <div class="neo-highlight text-sm md:text-base leading-relaxed">
+            <strong>Currently:</strong> Growing the national EMR experience at PT Pertamina Bina Medika IHC while tinkering with creative tooling side projects.
+          </div>
+        </div>
+        <div class="flex flex-col items-center gap-4">
+          <img src="./assets/photo-profile.jpeg" alt="Foto Yuda" class="neo-avatar w-full max-w-[220px] md:max-w-xs h-auto" />
+          <div class="neo-pill">Based in Indonesia · Remote friendly</div>
         </div>
       </header>
 
-      <!-- Quick Links -->
-      <section class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <a class="fade-in glass border 
-        border-zinc-200 dark:border-zinc-800 rounded-xl p-4 py-2
-        hover:scale-[1.01] 
-        transition" href="https://github.com/yudafhd" 
-        target="_blank" rel="noopener">
-          <div class="flex items-center justify-between">
-              <p class="font-semibold">GitHub</p>
-            <span aria-hidden class="text-2xl">📦</span>
-          </div>
-        </a>
-        <a class="fade-in glass border 
-        border-zinc-200 dark:border-zinc-800 rounded-xl p-4 py-2
-        hover:scale-[1.01] transition"
-         href="https://www.linkedin.com/in/yudafahrudin" 
-         target="_blank" rel="noopener">
-          <div class="flex items-center justify-between">
-              <h3 class="font-semibold">LinkedIn</h3>
-            <span aria-hidden class="text-2xl">💼</span>
-          </div>
-        </a>
-      </section>
-
-
-      <!-- SKILLS -->
-      <section class="mt-8 md:mt-10">
-        <h2 class="text-sm uppercase tracking-wide text-gray-200">SKILLS</h2>
-        <div class="mt-3 grid grid-cols-1 gap-4">
-          <div class="glass border border-zinc-200 dark:border-zinc-800 rounded-xl p-4">
-            <h3 class="font-semibold text-sm">Core Stack</h3>
-            <div class="mt-2 flex flex-wrap gap-2 text-xs">
-              <span class="px-2 py-1 rounded-full bg-zinc-900 text-white dark:bg-white dark:text-zinc-900">TypeScript</span>
-              <span class="px-2 py-1 rounded-full bg-cyan-100 text-cyan-800 dark:bg-cyan-900/40 dark:text-cyan-300">React.js</span>
-              <span class="px-2 py-1 rounded-full bg-cyan-100 text-cyan-800 dark:bg-cyan-900/40 dark:text-cyan-300">Next.js</span>
-              <span class="px-2 py-1 rounded-full bg-emerald-100 text-emerald-800 dark:bg-emerald-900/40 dark:text-emerald-300">Node.js</span>
-              <span class="px-2 py-1 rounded-full bg-indigo-100 text-indigo-800 dark:bg-indigo-900/40 dark:text-indigo-300">GraphQL</span>
-              <span class="px-2 py-1 rounded-full bg-orange-100 text-orange-800 dark:bg-orange-900/40 dark:text-orange-300">REST APIs</span>
-              <span class="px-2 py-1 rounded-full bg-zinc-200 text-zinc-800 dark:bg-zinc-800 dark:text-zinc-200">Jest</span>
-              <span class="px-2 py-1 rounded-full bg-zinc-200 text-zinc-800 dark:bg-zinc-800 dark:text-zinc-200">Git & Code Review</span>
-              <span class="px-2 py-1 rounded-full bg-zinc-200 text-zinc-800 dark:bg-zinc-800 dark:text-zinc-200">SQL / Query Writing</span>
-              <span class="px-2 py-1 rounded-full bg-fuchsia-100 text-fuchsia-800 dark:bg-fuchsia-900/40 dark:text-fuchsia-300">Design System (ANTD)</span>
-              <span class="px-2 py-1 rounded-full bg-sky-100 text-sky-800 dark:bg-sky-900/40 dark:text-sky-300">UI/UX Engineering</span>
+      <section class="neo-section fade-in" aria-labelledby="social-links">
+        <span id="social-links" class="neo-section-title">Find Me</span>
+        <div class="neo-grid two">
+          <a class="neo-card p-5 flex items-start justify-between gap-3" href="https://github.com/yudafhd" target="_blank" rel="noopener">
+            <div class="space-y-1">
+              <p class="text-lg font-semibold">GitHub</p>
+              <p class="text-sm leading-relaxed opacity-80">Repos, experiments, and the odd weekend hack.</p>
             </div>
-          </div>
-          <div class="glass border border-zinc-200 dark:border-zinc-800 rounded-xl p-4">
-            <h3 class="font-semibold text-sm">Supporting</h3>
-            <div class="mt-2 flex flex-wrap gap-2 text-xs">
-              <span class="px-2 py-1 rounded-full bg-indigo-100 text-indigo-800 dark:bg-indigo-900/40 dark:text-indigo-300">React Native</span>
-              <span class="px-2 py-1 rounded-full bg-red-100 text-red-800 dark:bg-red-900/40 dark:text-red-300">Angular / AngularJS</span>
-              <span class="px-2 py-1 rounded-full bg-rose-100 text-rose-800 dark:bg-rose-900/40 dark:text-rose-300">Ruby on Rails (API)</span>
-              <span class="px-2 py-1 rounded-full bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-300">Performance Optimization</span>
-              <span class="px-2 py-1 rounded-full bg-emerald-100 text-emerald-800 dark:bg-emerald-900/40 dark:text-emerald-300">Authentication (PrivyID, OAuth)</span>
-              <span class="px-2 py-1 rounded-full bg-sky-100 text-sky-800 dark:bg-sky-900/40 dark:text-sky-300">GCP (basic)</span>
-            </div>
-          </div>
-          <div class="glass border border-zinc-200 dark:border-zinc-800 rounded-xl p-4">
-            <h3 class="font-semibold text-sm">Domain</h3>
-            <div class="mt-2 flex flex-wrap gap-2 text-xs">
-              <span class="px-2 py-1 rounded-full bg-teal-100 text-teal-800 dark:bg-teal-900/40 dark:text-teal-300">Healthcare: EMR, SIMRS</span>
-              <span class="px-2 py-1 rounded-full bg-teal-100 text-teal-800 dark:bg-teal-900/40 dark:text-teal-300">SatuSehat</span>
-              <span class="px-2 py-1 rounded-full bg-blue-100 text-blue-800 dark:bg-blue-900/40 dark:text-blue-300">E-commerce Logistics</span>
-              <span class="px-2 py-1 rounded-full bg-violet-100 text-violet-800 dark:bg-violet-900/40 dark:text-violet-300">Insurance Membership</span>
-              <span class="px-2 py-1 rounded-full bg-stone-100 text-stone-800 dark:bg-stone-900/40 dark:text-stone-300">Construction</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Featured / Projects (placeholder—you can swap links later) -->
-      <section class="mt-6 md:mt-8">
-        <h2 class="text-sm uppercase tracking-wide text-gray-200">PROJECTS</h2>
-        <div class="mt-3 grid grid-cols-1 gap-4">
-          <a class="fade-in glass border border-zinc-200 dark:border-zinc-800 rounded-xl p-4 hover:scale-[1.01] transition block" href="https://www.volaroid.com" target="_blank" rel="noopener">
-            <div class="flex items-start justify-between gap-2">
-              <div>
-                <h3 class="font-semibold">Volaroid (Content Creator Tools)</h3>
-                <p class="text-sm text-zinc-500 dark:text-zinc-400">Web-based creative tools: filters, grids, reels templates.</p>
-              </div>
-              <span aria-hidden class="text-2xl">✨</span>
-            </div>
+            <span class="text-3xl" aria-hidden>🧪</span>
           </a>
-          <a class="fade-in glass border border-zinc-200 dark:border-zinc-800 rounded-xl p-4 hover:scale-[1.01] transition block" href="https://gears.cloud" target="_blank" rel="noopener">
-            <div class="flex items-start justify-between gap-2">
-              <div>
-                <h3 class="font-semibold">Gears Cloud (Business Tools)</h3>
-                <p class="text-sm text-zinc-500 dark:text-zinc-400">All-in-one dev/design utilities: formatters, converters, etc.</p>
-              </div>
-              <span aria-hidden class="text-2xl">⚙️</span>
+          <a class="neo-card p-5 flex items-start justify-between gap-3" data-tone="alt" href="https://www.linkedin.com/in/yudafahrudin" target="_blank" rel="noopener">
+            <div class="space-y-1">
+              <p class="text-lg font-semibold">LinkedIn</p>
+              <p class="text-sm leading-relaxed opacity-80">Career snapshot, experience highlights, recommendations.</p>
             </div>
-          </a>
-          <a class="fade-in glass border border-zinc-200 dark:border-zinc-800 rounded-xl p-4 hover:scale-[1.01] transition block" href="https://talkactivetome.vercel.app/" target="_blank" rel="noopener">
-            <div class="flex items-start justify-between gap-2">
-              <div>
-                <h3 class="font-semibold">Talkative To Me (AI Interview Project)</h3>
-                <p class="text-sm text-zinc-500 dark:text-zinc-400">
-                  A web app for AI-based interview practice: dynamic questions, timer,
-                  real-time transcripts, automatic scoring and feedback, answer summary (STAR),
-                  and results recap for easy progress tracking.
-                </p>
-
-              </div>
-              <span aria-hidden class="text-2xl">⚙️</span>
-            </div>
+            <span class="text-3xl" aria-hidden>💼</span>
           </a>
         </div>
       </section>
 
-      <!-- ================== APPENDED CONTENT START ================== -->
-      <!-- EXPERIENCE -->
-  <section class="mt-8 md:mt-10">
-  <h2 class="text-sm uppercase tracking-wide text-gray-200">EXPERIENCE</h2>
-  <div class="mt-3 space-y-3">
-
-    <!-- IHC -->
-    <article class="glass border border-zinc-200 dark:border-zinc-800 rounded-xl p-4">
-      <header class="flex items-start justify-between gap-3">
-        <div>
-          <h3 class="font-semibold">Software Engineer — PT Pertamina Bina Medika IHC</h3>
-          <p class="text-xs text-zinc-500 dark:text-zinc-400">Feb 2024 – Present · Indonesia (Hybrid)</p>
+      <section class="neo-section fade-in" aria-labelledby="skills">
+        <span id="skills" class="neo-section-title">Skillset</span>
+        <div class="neo-grid two">
+          <article class="neo-card p-5 space-y-4" data-tone="alt">
+            <div class="flex items-center gap-2">
+              <span class="text-2xl" aria-hidden>🧰</span>
+              <h3 class="text-xl font-semibold">Core Stack</h3>
+            </div>
+            <p class="text-sm md:text-base leading-relaxed">
+              Product engineering across the full stack, with a focus on building modular frontends and resilient platform foundations.
+            </p>
+            <div class="neo-tag-grid">
+              <span class="neo-tag">TypeScript</span>
+              <span class="neo-tag">React.js</span>
+              <span class="neo-tag">Next.js</span>
+              <span class="neo-tag">Node.js</span>
+              <span class="neo-tag">GraphQL</span>
+              <span class="neo-tag">REST APIs</span>
+              <span class="neo-tag">Jest</span>
+              <span class="neo-tag">Git Review</span>
+              <span class="neo-tag">SQL</span>
+              <span class="neo-tag">Design Systems</span>
+              <span class="neo-tag">UI/UX Engineering</span>
+            </div>
+          </article>
+          <article class="neo-card p-5 space-y-4">
+            <div class="flex items-center gap-2">
+              <span class="text-2xl" aria-hidden>🧭</span>
+              <h3 class="text-xl font-semibold">Supporting</h3>
+            </div>
+            <p class="text-sm md:text-base leading-relaxed">
+              Cross-functional experience that keeps deliveries smooth and collaborative across teams and platforms.
+            </p>
+            <div class="neo-tag-grid">
+              <span class="neo-tag">React Native</span>
+              <span class="neo-tag">Angular</span>
+              <span class="neo-tag">Ruby on Rails</span>
+              <span class="neo-tag">Performance</span>
+              <span class="neo-tag">Authentication</span>
+              <span class="neo-tag">GCP Basics</span>
+            </div>
+            <div class="neo-highlight text-sm leading-relaxed">
+              Domains: Healthcare EMR, SatuSehat, E-commerce Logistics, Insurance, Construction.
+            </div>
+          </article>
         </div>
-        <span class="text-xl" aria-hidden>🏥</span>
-      </header>
-      <ul class="mt-2 list-disc list-inside text-sm text-zinc-600 dark:text-zinc-300 space-y-1">
-        <li>Developed EMR modules for SIMRS (Inpatient Initial Assessment, CPPT, etc.).</li>
-        <li>Built <strong>SatuSehat</strong> verification module.</li>
-        <li>Created a scalable Design System using <strong>Ant Design (ANTD)</strong>.</li>
-        <li>Optimized performance and developer experience using <strong>Next.js</strong>.</li>
-        <li>Performed code reviews to ensure clean code and detect code smells.</li>
-        <li>Conducted R&D and collaborated to achieve the best UI/UX design.</li>
-      </ul>
-      <p class="mt-2 text-xs text-zinc-500 dark:text-zinc-400">
-        Skills: Software Design · React.js · Software Infrastructure · Next.js · Git · TypeScript · GCP · Query Writing · Web Applications
-      </p>
-    </article>
+      </section>
 
-    <!-- Rey -->
-    <article class="glass border border-zinc-200 dark:border-zinc-800 rounded-xl p-4">
-      <header class="flex items-start justify-between gap-3">
-        <div>
-          <h3 class="font-semibold">Associate Software Engineer — Rey.id</h3>
-          <p class="text-xs text-zinc-500 dark:text-zinc-400">Jan 2023 – Dec 2023 · Jakarta (Remote)</p>
+      <section class="neo-section fade-in" aria-labelledby="projects">
+        <span id="projects" class="neo-section-title">Projects</span>
+        <div class="neo-grid">
+          <a class="neo-card p-5 flex flex-col gap-4" href="https://www.volaroid.com" target="_blank" rel="noopener">
+            <div class="flex items-start justify-between gap-3">
+              <div class="space-y-1">
+                <h3 class="text-2xl font-semibold">Volaroid</h3>
+                <p class="text-sm md:text-base leading-relaxed opacity-80">Creative studio: filters, grids, and reels templates for playful storytelling.</p>
+              </div>
+              <span class="text-3xl" aria-hidden>✨</span>
+            </div>
+            <span class="neo-link text-sm md:text-base">Visit project</span>
+          </a>
+          <a class="neo-card p-5 flex flex-col gap-4" data-tone="alt" href="https://gearscloud.com" target="_blank" rel="noopener">
+            <div class="flex items-start justify-between gap-3">
+              <div class="space-y-1">
+                <h3 class="text-2xl font-semibold">Gears Cloud</h3>
+                <p class="text-sm md:text-base leading-relaxed opacity-80">Utility toolbox for developers &amp; designers: formatters, converters, helpers.</p>
+              </div>
+              <span class="text-3xl" aria-hidden>⚙️</span>
+            </div>
+            <span class="neo-link text-sm md:text-base">Visit project</span>
+          </a>
+          <a class="neo-card p-5 flex flex-col gap-4" href="https://talkactivetome.vercel.app/" target="_blank" rel="noopener">
+            <div class="flex items-start justify-between gap-3">
+              <div class="space-y-1">
+                <h3 class="text-2xl font-semibold">Talkative To Me</h3>
+                <p class="text-sm md:text-base leading-relaxed opacity-80">AI-powered interview prep with live transcripts, scoring, and STAR summaries.</p>
+              </div>
+              <span class="text-3xl" aria-hidden>🗣️</span>
+            </div>
+            <span class="neo-link text-sm md:text-base">Visit project</span>
+          </a>
         </div>
-        <span class="text-xl" aria-hidden>🏥</span>
-      </header>
-      <ul class="mt-2 list-disc list-inside text-sm text-zinc-600 dark:text-zinc-300 space-y-1">
-        <li>Built a business dashboard using <strong>Next.js</strong>.</li>
-        <li>Contributed to the design system and UI components.</li>
-        <li>Optimized payment page usability and conversion rate.</li>
-        <li>Enhanced web and mobile responsiveness of the main page.</li>
-        <li>Implemented unit testing with <strong>Jest</strong> and performed regular code reviews.</li>
-      </ul>
-      <p class="mt-2 text-xs text-zinc-500 dark:text-zinc-400">
-        Skills: GraphQL · React.js · Next.js · Git · TypeScript · Web Applications
-      </p>
-    </article>
+      </section>
 
-    <!-- SIRCLO -->
-    <article class="glass border border-zinc-200 dark:border-zinc-800 rounded-xl p-4">
-      <header class="flex items-start justify-between gap-3">
-        <div>
-          <h3 class="font-semibold">Associate Software Engineer — SIRCLO</h3>
-          <p class="text-xs text-zinc-500 dark:text-zinc-400">Aug 2021 – Jan 2023 · Tangerang (Remote)</p>
+      <section class="neo-section fade-in" aria-labelledby="experience">
+        <span id="experience" class="neo-section-title">Experience</span>
+        <div class="neo-grid">
+          <article class="neo-card p-5 space-y-4">
+            <header class="flex items-start justify-between gap-3">
+              <div class="space-y-1">
+                <h3 class="text-lg md:text-xl font-semibold">Software Engineer — PT Pertamina Bina Medika IHC</h3>
+                <p class="text-sm opacity-70">Feb 2024 – Present · Indonesia (Hybrid)</p>
+              </div>
+              <span class="text-3xl" aria-hidden>🏥</span>
+            </header>
+            <ul class="list-disc pl-5 space-y-1.5 text-sm md:text-base leading-relaxed">
+              <li>Developed EMR modules for SIMRS (Inpatient Initial Assessment, CPPT, etc.).</li>
+              <li>Built <strong>SatuSehat</strong> verification module.</li>
+              <li>Created a scalable design system using <strong>Ant Design (ANTD)</strong>.</li>
+              <li>Optimized performance and developer experience using <strong>Next.js</strong>.</li>
+              <li>Performed code reviews to ensure clean code and detect code smells.</li>
+              <li>Conducted R&amp;D and collaborated to achieve the best UI/UX design.</li>
+            </ul>
+            <p class="text-xs uppercase tracking-wide opacity-80">
+              Stack: Software Design · React.js · Software Infrastructure · Next.js · Git · TypeScript · GCP · Query Writing · Web Applications
+            </p>
+          </article>
+
+          <article class="neo-card p-5 space-y-4" data-tone="alt">
+            <header class="flex items-start justify-between gap-3">
+              <div class="space-y-1">
+                <h3 class="text-lg md:text-xl font-semibold">Associate Software Engineer — Rey.id</h3>
+                <p class="text-sm opacity-70">Jan 2023 – Dec 2023 · Jakarta (Remote)</p>
+              </div>
+              <span class="text-3xl" aria-hidden>🏥</span>
+            </header>
+            <ul class="list-disc pl-5 space-y-1.5 text-sm md:text-base leading-relaxed">
+              <li>Built a business dashboard using <strong>Next.js</strong>.</li>
+              <li>Contributed to the design system and UI components.</li>
+              <li>Optimized payment page usability and conversion rate.</li>
+              <li>Enhanced web and mobile responsiveness of the main page.</li>
+              <li>Implemented unit testing with <strong>Jest</strong> and performed regular code reviews.</li>
+            </ul>
+            <p class="text-xs uppercase tracking-wide opacity-80">
+              Stack: GraphQL · React.js · Next.js · Git · TypeScript · Web Applications
+            </p>
+          </article>
+
+          <article class="neo-card p-5 space-y-4">
+            <header class="flex items-start justify-between gap-3">
+              <div class="space-y-1">
+                <h3 class="text-lg md:text-xl font-semibold">Associate Software Engineer — SIRCLO</h3>
+                <p class="text-sm opacity-70">Aug 2021 – Jan 2023 · Tangerang (Remote)</p>
+              </div>
+              <span class="text-3xl" aria-hidden>🛒</span>
+            </header>
+            <ul class="list-disc pl-5 space-y-1.5 text-sm md:text-base leading-relaxed">
+              <li>Improved shipping address logic and optimized the shipping page UI.</li>
+              <li>Refined <strong>PrivyID</strong> integration flow.</li>
+              <li>Developed and maintained reusable UI components.</li>
+              <li>Implemented unit tests with <strong>Jest</strong> and built API Gateway using <strong>Apollo GraphQL</strong>.</li>
+            </ul>
+            <p class="text-xs uppercase tracking-wide opacity-80">
+              Stack: GraphQL · Node.js · REST APIs · React Hooks · React.js · JavaScript · Git · TypeScript · Web Applications
+            </p>
+          </article>
+
+          <article class="neo-card p-5 space-y-4" data-tone="alt">
+            <header class="flex items-start justify-between gap-3">
+              <div class="space-y-1">
+                <h3 class="text-lg md:text-xl font-semibold">Frontend Developer — Wave Consulting Indonesia</h3>
+                <p class="text-sm opacity-70">Jul 2019 – Aug 2021 · Jakarta (Remote)</p>
+              </div>
+              <span class="text-3xl" aria-hidden>📊</span>
+            </header>
+            <ul class="list-disc pl-5 space-y-1.5 text-sm md:text-base leading-relaxed">
+              <li>Built an accounting product using <strong>Angular 11</strong>.</li>
+              <li>Developed mobile features using <strong>React Native</strong>.</li>
+            </ul>
+            <p class="text-xs uppercase tracking-wide opacity-80">
+              Stack: Angular · AngularJS · React Native · TypeScript · REST APIs
+            </p>
+          </article>
+
+          <article class="neo-card p-5 space-y-4">
+            <header class="flex items-start justify-between gap-3">
+              <div class="space-y-1">
+                <h3 class="text-lg md:text-xl font-semibold">Full Stack Developer — Twiscode</h3>
+                <p class="text-sm opacity-70">Nov 2018 – Jul 2019 · Surabaya (On-site)</p>
+              </div>
+              <span class="text-3xl" aria-hidden>🧩</span>
+            </header>
+            <ul class="list-disc pl-5 space-y-1.5 text-sm md:text-base leading-relaxed">
+              <li>Developed multiple projects using <strong>React.js</strong> and <strong>Node.js</strong>.</li>
+            </ul>
+            <p class="text-xs uppercase tracking-wide opacity-80">
+              Stack: Node.js · REST APIs · React.js · Redux · JavaScript · Git
+            </p>
+          </article>
+
+          <article class="neo-card p-5 space-y-4" data-tone="alt">
+            <header class="flex items-start justify-between gap-3">
+              <div class="space-y-1">
+                <h3 class="text-lg md:text-xl font-semibold">React Native Developer — Hubble</h3>
+                <p class="text-sm opacity-70">Nov 2017 – Oct 2018 · Singapore (Remote)</p>
+              </div>
+              <span class="text-3xl" aria-hidden>🏗️</span>
+            </header>
+            <ul class="list-disc pl-5 space-y-1.5 text-sm md:text-base leading-relaxed">
+              <li>Fixed bugs and maintained <strong>React Native</strong> mobile applications.</li>
+              <li>Supported and maintained several APIs built with <strong>Ruby on Rails</strong>.</li>
+            </ul>
+          </article>
         </div>
-        <span class="text-xl" aria-hidden>🛒</span>
-      </header>
-      <ul class="mt-2 list-disc list-inside text-sm text-zinc-600 dark:text-zinc-300 space-y-1">
-        <li>Improved shipping address logic and optimized the shipping page UI.</li>
-        <li>Refined <strong>PrivyID</strong> integration flow.</li>
-        <li>Developed and maintained reusable UI components.</li>
-        <li>Implemented unit tests with <strong>Jest</strong> and built API Gateway using <strong>Apollo GraphQL</strong>.</li>
-      </ul>
-      <p class="mt-2 text-xs text-zinc-500 dark:text-zinc-400">
-        Skills: GraphQL · Node.js · REST APIs · React Hooks · React.js · JavaScript · Git · TypeScript · Web Applications
-      </p>
-    </article>
+      </section>
 
-    <!-- Wave -->
-    <article class="glass border border-zinc-200 dark:border-zinc-800 rounded-xl p-4">
-      <header class="flex items-start justify-between gap-3">
-        <div>
-          <h3 class="font-semibold">Frontend Developer — Wave Consulting Indonesia</h3>
-          <p class="text-xs text-zinc-500 dark:text-zinc-400">Jul 2019 – Aug 2021 · Jakarta (Remote)</p>
+      <footer class="neo-card p-6 text-center text-sm space-y-3 fade-in" data-tone="alt">
+        <p>© <span id="year"></span> @yudafhd — Built with love, Tailwind, and coffee.</p>
+        <div class="flex flex-wrap justify-center gap-3">
+          <a class="neo-link text-sm" href="mailto:ahmadyudafahrudin@gmail.com">Email</a>
+          <a class="neo-link text-sm" href="https://wa.me/085708880099" target="_blank" rel="noopener">WhatsApp</a>
         </div>
-        <span class="text-xl" aria-hidden>📊</span>
-      </header>
-      <ul class="mt-2 list-disc list-inside text-sm text-zinc-600 dark:text-zinc-300 space-y-1">
-        <li>Built an accounting product using <strong>Angular 11</strong>.</li>
-        <li>Developed mobile features using <strong>React Native</strong>.</li>
-      </ul>
-      <p class="mt-2 text-xs text-zinc-500 dark:text-zinc-400">
-        Skills: Angular · AngularJS · React Native · TypeScript · REST APIs
-      </p>
-    </article>
-
-    <!-- Twiscode -->
-    <article class="glass border border-zinc-200 dark:border-zinc-800 rounded-xl p-4">
-      <header class="flex items-start justify-between gap-3">
-        <div>
-          <h3 class="font-semibold">Full Stack Developer — Twiscode</h3>
-          <p class="text-xs text-zinc-500 dark:text-zinc-400">Nov 2018 – Jul 2019 · Surabaya (On-site)</p>
-        </div>
-        <span class="text-xl" aria-hidden>🧩</span>
-      </header>
-      <ul class="mt-2 list-disc list-inside text-sm text-zinc-600 dark:text-zinc-300 space-y-1">
-        <li>Developed multiple projects using <strong>React.js</strong> and <strong>Node.js</strong>.</li>
-      </ul>
-      <p class="mt-2 text-xs text-zinc-500 dark:text-zinc-400">
-        Skills: Node.js · REST APIs · React.js · Redux · JavaScript · Git
-      </p>
-    </article>
-
-    <!-- Hubble -->
-    <article class="glass border border-zinc-200 dark:border-zinc-800 rounded-xl p-4">
-      <header class="flex items-start justify-between gap-3">
-        <div>
-          <h3 class="font-semibold">React Native Developer — Hubble</h3>
-          <p class="text-xs text-zinc-500 dark:text-zinc-400">Nov 2017 – Oct 2018 · Singapore (Remote)</p>
-        </div>
-        <span class="text-xl" aria-hidden>🏗️</span>
-      </header>
-      <ul class="mt-2 list-disc list-inside text-sm text-zinc-600 dark:text-zinc-300 space-y-1">
-        <li>Fixed bugs and maintained <strong>React Native</strong> mobile applications.</li>
-        <li>Supported and maintained several APIs built with <strong>Ruby on Rails</strong>.</li>
-      </ul>
-    </article>
-  </div>
-</section>
-
-      <!-- ================== APPENDED CONTENT END ================== -->
-
-      <!-- Footer -->
-      <footer class="mt-8 md:mt-12 text-center text-xs text-gray-200">
-        <p>© <span id="year"></span> @yudafhd · Made by ❤️, Tailwind, and coffe.</p>
-        <p class="mt-2"><a class="underline underline-offset-4 hover:text-cyan-400" href="mailto:ahmadyudafahrudin@gmail.com">Email</a> · <a class="underline underline-offset-4 hover:text-cyan-400" href="https://wa.me/085708880099" target="_blank" rel="noopener">WhatsApp</a></p>
       </footer>
     </div>
 
@@ -367,6 +624,43 @@
           setTimeout(() => el.classList.add('show'), 80 * i);
         });
       });
+
+      const themeToggle = document.querySelector('[data-theme-toggle]');
+      if (themeToggle) {
+        const iconEl = themeToggle.querySelector('[data-theme-icon]');
+        const labelEl = themeToggle.querySelector('[data-theme-label]');
+
+        const resolveTheme = () => {
+          const datasetTheme = document.documentElement.dataset.theme;
+          if (datasetTheme === 'dark' || datasetTheme === 'light') return datasetTheme;
+          return document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+        };
+
+        const setButtonState = (theme) => {
+          const isDark = theme === 'dark';
+          const nextLabel = isDark ? 'Switch to light mode' : 'Switch to dark mode';
+          themeToggle.setAttribute('aria-pressed', String(isDark));
+          themeToggle.setAttribute('aria-label', nextLabel);
+          themeToggle.title = nextLabel;
+
+          if (iconEl) iconEl.textContent = isDark ? '🌙' : '🌞';
+          if (labelEl) labelEl.textContent = isDark ? 'Dark mode' : 'Light mode';
+        };
+
+        document.addEventListener('themechange', (event) => {
+          const detailTheme = event.detail && typeof event.detail.theme === 'string' ? event.detail.theme : resolveTheme();
+          setButtonState(detailTheme);
+        });
+
+        themeToggle.addEventListener('click', () => {
+          const next = typeof window.__toggleTheme === 'function'
+            ? window.__toggleTheme()
+            : (resolveTheme() === 'dark' ? 'light' : 'dark');
+          setButtonState(next);
+        });
+
+        setButtonState(resolveTheme());
+      }
     </script>
   </body>
 </html>
