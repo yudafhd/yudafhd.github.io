@@ -1,564 +1,932 @@
 <!DOCTYPE html>
 <html lang="id" class="scroll-smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>@yudafhd — Software Engineer</title>
 
-    <!-- SEO basics -->
-    <meta name="description" content="Yuda Fahrudin — Software Engineer. I build delightful web experiences with Next.js, React, Laravel, and creative tooling." />
-    <meta name="keywords" content="Yuda Fahrudin, yudafhd, Software Engineer, Next.js, React, Laravel, Indonesia" />
-    <meta name="author" content="@yudafhd" />
-    <link rel="canonical" href="https://yudafhd.github.io/" />
-    <meta name="theme-color" content="#ff5f5d" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>@yudafhd — Software Engineer</title>
 
-    <!-- Open Graph / Twitter -->
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="@yudafhd — Software Engineer" />
-    <meta property="og:description" content="Science & Tech enthusiast crafting apps with Next.js, React, and Laravel." />
-    <meta property="og:url" content="https://yudafhd.github.io/" />
-    <meta property="og:image" content="https://yudafhd.github.io/assets/og-image.jpg" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="@yudafhd — Software Engineer" />
-    <meta name="twitter:description" content="Science & Tech enthusiast crafting apps with Next.js, React, and Laravel." />
-    <meta name="twitter:image" content="https://yudafhd.github.io/assets/og-image.jpg" />
+  <!-- SEO basics -->
+  <meta name="description"
+    content="Yuda Fahrudin — Software Engineer. I build delightful web experiences with Next.js, React, Laravel, and creative tooling." />
+  <meta name="keywords" content="Yuda Fahrudin, yudafhd, Software Engineer, Next.js, React, Laravel, Indonesia" />
+  <meta name="author" content="@yudafhd" />
+  <link rel="canonical" href="https://yudafhd.github.io/" />
+  <meta name="theme-color" content="#0a84ff" />
 
-    <!-- Icons -->
-    <link rel="icon" href="./assets/favicon.ico" />
-    <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png" />
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="@yudafhd — Software Engineer" />
+  <meta property="og:description" content="Science & Tech enthusiast crafting apps with Next.js, React, and Laravel." />
+  <meta property="og:url" content="https://yudafhd.github.io/" />
+  <meta property="og:image" content="https://yudafhd.github.io/assets/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="@yudafhd — Software Engineer" />
+  <meta name="twitter:description"
+    content="Science & Tech enthusiast crafting apps with Next.js, React, and Laravel." />
+  <meta name="twitter:image" content="https://yudafhd.github.io/assets/og-image.jpg" />
 
-    <!-- Tailwind (browser) -->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-   
-   <style>
-      @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap');
+  <!-- Icons -->
+  <link rel="icon" href="./assets/favicon.ico" />
+  <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png" />
 
-      :root {
-        --neo-bg: #f6f1ff;
-        --neo-surface: #fffaf4;
-        --neo-surface-alt: #ffe3d3;
-        --neo-primary: #ff5f5d;
-        --neo-secondary: #3d5af1;
-        --neo-accent: #20c997;
-        --neo-shadow: #1c1c1c;
-        --neo-text: #181818;
+  <!-- Tailwind (browser) -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <style>
+    :root {
+      color-scheme: light;
+      --mac-wallpaper: linear-gradient(135deg, #0b1d68 0%, #1c3cff 30%, #695bff 55%, #ff6f61 85%, #ff9f68 100%);
+      --mac-wallpaper-glow: radial-gradient(circle at 20% 20%, rgba(10, 132, 255, 0.35), transparent 55%), radial-gradient(circle at 80% 25%, rgba(255, 107, 186, 0.45), transparent 60%), radial-gradient(circle at 50% 80%, rgba(255, 210, 128, 0.35), transparent 65%);
+      --mac-surface: rgba(255, 255, 255, 0.45);
+      --mac-surface-strong: rgba(255, 255, 255, 0.62);
+      --mac-surface-subtle: rgba(255, 255, 255, 0.3);
+      --mac-border: rgba(255, 255, 255, 0.38);
+      --mac-border-strong: rgba(255, 255, 255, 0.55);
+      --mac-shadow: rgba(10, 20, 60, 0.28);
+      --mac-shadow-soft: rgba(10, 20, 60, 0.16);
+      --mac-text: rgba(15, 23, 42, 0.95);
+      --mac-text-muted: rgba(15, 23, 42, 0.68);
+      --mac-heading: rgba(13, 20, 45, 0.92);
+      --mac-accent: #0a84ff;
+      --mac-accent-soft: rgba(10, 132, 255, 0.16);
+      --mac-success: #30d158;
+      --mac-warning: #ffd60a;
+      --mac-danger: #ff453a;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      font-family: 'SF Pro Display', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--mac-wallpaper);
+      color: var(--mac-text);
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: var(--mac-wallpaper-glow);
+      opacity: 0.9;
+      pointer-events: none;
+      z-index: -2;
+    }
+
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0));
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    a:hover {
+      color: var(--mac-accent);
+    }
+
+    .macos-stage {
+      min-height: 100vh;
+      padding: clamp(1.5rem, 4vw, 3rem);
+      display: flex;
+      flex-direction: column;
+      gap: clamp(1.5rem, 3vw, 2.5rem);
+    }
+
+    .macos-menubar {
+      width: min(1100px, 100%);
+      margin: 0 auto;
+      padding: 0.55rem clamp(1rem, 3vw, 1.75rem);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-radius: 18px;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0.12));
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      box-shadow: 0 18px 46px rgba(9, 21, 64, 0.25);
+      backdrop-filter: blur(24px);
+      color: rgba(255, 255, 255, 0.92);
+      font-size: 0.95rem;
+      letter-spacing: 0.02em;
+    }
+
+    .macos-menubar-left,
+    .macos-menubar-right {
+      display: flex;
+      align-items: center;
+      gap: clamp(0.8rem, 1.5vw, 1.6rem);
+    }
+
+    .macos-apple {
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+
+    .macos-menu {
+      position: relative;
+      padding: 0.15rem 0;
+      font-weight: 500;
+    }
+
+    .macos-menu::after {
+      content: '';
+      position: absolute;
+      inset: auto 0 -0.35rem;
+      height: 2px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.9);
+      transform: scaleX(0);
+      transition: transform 0.2s ease;
+      transform-origin: center;
+    }
+
+    .macos-menu:hover::after,
+    .macos-menu:focus-visible::after {
+      transform: scaleX(1);
+    }
+
+    .macos-status {
+      font-variant-numeric: tabular-nums;
+      opacity: 0.9;
+    }
+
+    .macos-window {
+      width: min(1100px, 100%);
+      margin: 0 auto;
+      border-radius: 28px;
+      background: linear-gradient(160deg, rgba(255, 255, 255, 0.56), rgba(255, 255, 255, 0.32));
+      border: 1px solid var(--mac-border);
+      box-shadow: 0 35px 65px rgba(8, 20, 62, 0.25);
+      overflow: hidden;
+      position: relative;
+    }
+
+    @supports (backdrop-filter: blur(20px)) {
+      .macos-window {
+        backdrop-filter: blur(26px);
       }
+    }
 
-      html {
-        scroll-behavior: smooth;
-      }
+    .macos-window::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(0deg, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0));
+      pointer-events: none;
+    }
 
-      body {
-        min-height: 100vh;
-        font-family: 'Space Grotesk', 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-        background-color: var(--neo-bg);
-        color: var(--neo-text);
-        position: relative;
-        overflow-x: hidden;
-      }
+    .macos-window-chrome {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      padding: 0.85rem clamp(1.2rem, 3vw, 1.8rem);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+      position: relative;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.65), rgba(255, 255, 255, 0.3));
+      z-index: 1;
+    }
 
-      .dark body {
-        background-color: #0d0d0d;
-        color: #f8f8f8;
-      }
+    .macos-traffic-lights {
+      display: flex;
+      gap: 0.5rem;
+    }
 
-      .dark body::before {
-        background-image:
-          linear-gradient(90deg, rgba(248, 248, 248, 0.08) 1px, transparent 1px),
-          linear-gradient(180deg, rgba(248, 248, 248, 0.08) 1px, transparent 1px);
-      }
+    .macos-light {
+      width: 0.85rem;
+      height: 0.85rem;
+      border-radius: 50%;
+      position: relative;
+      border: 1px solid rgba(0, 0, 0, 0.12);
+      box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.65);
+    }
 
-      a {
-        color: inherit;
-      }
+    .macos-light[data-tone='close'] {
+      background: var(--mac-danger);
+      border-color: rgba(174, 48, 39, 0.8);
+    }
 
-      a:hover {
-        color: var(--neo-secondary);
-      }
+    .macos-light[data-tone='minimize'] {
+      background: var(--mac-warning);
+      border-color: rgba(180, 145, 0, 0.7);
+    }
 
-      .neo-shell {
-        position: relative;
-        z-index: 1;
-      }
+    .macos-light[data-tone='fullscreen'] {
+      background: var(--mac-success);
+      border-color: rgba(33, 128, 75, 0.7);
+    }
 
-      .neo-card {
-        background: var(--neo-surface);
-        border: 3px solid var(--neo-shadow);
-        border-radius: 24px;
-        box-shadow: 6px 6px 0 0 var(--neo-shadow);
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
-      }
+    .macos-window-title {
+      text-align: center;
+      font-weight: 600;
+      color: var(--mac-heading);
+      letter-spacing: 0.02em;
+    }
 
-      .neo-card:hover {
-        transform: translate(-4px, -4px);
-        box-shadow: 10px 10px 0 0 var(--neo-shadow);
-      }
+    .macos-window-actions {
+      display: flex;
+      gap: 0.35rem;
+      justify-content: flex-end;
+      font-size: 0.85rem;
+      color: var(--mac-text-muted);
+      opacity: 0.8;
+    }
 
-      .neo-card[data-tone="alt"] {
-        background: var(--neo-surface-alt);
-      }
+    .macos-window-actions span {
+      padding: 0.2rem 0.45rem;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.35);
+      border: 1px solid rgba(255, 255, 255, 0.45);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.55);
+    }
 
-      .dark .neo-card {
-        background: #141414;
-        border-color: #f8f8f8;
-        box-shadow: 6px 6px 0 0 #f8f8f8;
-      }
+    .macos-window-body {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      gap: clamp(2.5rem, 4vw, 3.5rem);
+      padding: clamp(2rem, 4vw, 3.75rem);
+    }
 
-      .dark .neo-card[data-tone="alt"] {
-        background: #1f1f1f;
-      }
+    .neo-card {
+      background: var(--mac-surface);
+      border: 1px solid var(--mac-border);
+      border-radius: 28px;
+      box-shadow: 0 22px 45px var(--mac-shadow-soft);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+      backdrop-filter: blur(24px);
+    }
 
-      .neo-chip {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.35rem;
-        background: var(--neo-surface);
-        border: 2px solid var(--neo-shadow);
-        border-radius: 9999px;
-        padding: 0.35rem 0.85rem;
-        box-shadow: 4px 4px 0 0 var(--neo-shadow);
-        font-size: 0.75rem;
-        text-transform: uppercase;
-        letter-spacing: 0.08em;
-      }
+    .neo-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 30px 60px var(--mac-shadow);
+      background: var(--mac-surface-strong);
+    }
 
-      .neo-btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 0.6rem;
-        background: var(--neo-primary);
-        border: 3px solid var(--neo-shadow);
-        color: #fff;
-        border-radius: 9999px;
-        padding: 0.65rem 1.3rem;
-        font-weight: 600;
-        letter-spacing: 0.02em;
-        box-shadow: 4px 4px 0 0 var(--neo-shadow);
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
-      }
+    .neo-card[data-tone='alt'] {
+      background: var(--mac-surface-strong);
+    }
 
-      .neo-btn:hover {
-        transform: translate(-2px, -2px);
-        box-shadow: 6px 6px 0 0 var(--neo-shadow);
-      }
+    .neo-hero {
+      display: grid;
+      gap: 1.75rem;
+    }
 
-      .neo-btn.secondary {
-        background: var(--neo-secondary);
-      }
-
-      .neo-btn.ghost {
-        background: var(--neo-surface);
-        color: var(--neo-shadow);
-      }
-
-      .dark .neo-btn.ghost {
-        background: #181818;
-        color: #f8f8f8;
-      }
-
-      .neo-toggle {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.55rem;
-        padding: 0.45rem 0.95rem;
-        border: 3px solid var(--neo-shadow);
-        border-radius: 9999px;
-        background: var(--neo-surface);
-        box-shadow: 4px 4px 0 0 var(--neo-shadow);
-        font-size: 0.85rem;
-        font-weight: 600;
-        cursor: pointer;
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
-      }
-
-      .neo-toggle:hover {
-        transform: translate(-2px, -2px);
-        box-shadow: 6px 6px 0 0 var(--neo-shadow);
-      }
-
-      .neo-toggle:focus-visible {
-        outline: 3px solid var(--neo-secondary);
-        outline-offset: 3px;
-      }
-
-      .neo-toggle-icon {
-        font-size: 1.1rem;
-        line-height: 1;
-      }
-
-      .dark .neo-toggle {
-        background: #181818;
-        color: #f8f8f8;
-        border-color: #f8f8f8;
-        box-shadow: 4px 4px 0 0 #f8f8f8;
-      }
-
-      .neo-link {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.35rem;
-        border-bottom: 2px solid var(--neo-shadow);
-        padding-bottom: 0.1rem;
-        font-weight: 500;
-      }
-
-      .neo-link:hover {
-        color: var(--neo-secondary);
-        border-color: var(--neo-secondary);
-      }
-
-      .neo-section-title {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.6rem;
-        font-size: 1.1rem;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 0.08em;
-        border: 2px solid var(--neo-shadow);
-        padding: 0.35rem 0.8rem;
-        border-radius: 9999px;
-        background: var(--neo-surface);
-        box-shadow: 4px 4px 0 0 var(--neo-shadow);
-      }
-
-      .neo-tag-grid {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.6rem;
-      }
-
-      .neo-tag {
-        background: var(--neo-surface);
-        border: 2px solid var(--neo-shadow);
-        border-radius: 14px;
-        padding: 0.4rem 0.85rem;
-        font-size: 0.8rem;
-        font-weight: 500;
-        box-shadow: 3px 3px 0 0 var(--neo-shadow);
-      }
-
-      .neo-pill {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.35rem;
-        padding: 0.35rem 0.8rem;
-        border-radius: 9999px;
-        border: 2px solid var(--neo-shadow);
-        background: var(--neo-surface);
-        font-size: 0.75rem;
-        font-weight: 500;
-        box-shadow: 3px 3px 0 0 var(--neo-shadow);
-      }
-
-      .neo-highlight {
-        background: var(--neo-surface-alt);
-        border: 3px solid var(--neo-shadow);
-        border-radius: 18px;
-        padding: 0.75rem 1rem;
-        box-shadow: 5px 5px 0 0 var(--neo-shadow);
-      }
-
-      .neo-divider {
-        display: block;
-        height: 4px;
-        width: 100%;
-        background: repeating-linear-gradient(90deg, var(--neo-shadow) 0, var(--neo-shadow) 12px, transparent 12px, transparent 22px);
-        margin: 0;
-      }
-
+    @media (min-width: 900px) {
       .neo-hero {
-        display: grid;
-        gap: 1.5rem;
+        grid-template-columns: 1.2fr 0.8fr;
+        align-items: center;
+      }
+    }
+
+    .neo-avatar {
+      border-radius: 28px;
+      border: 1px solid var(--mac-border-strong);
+      box-shadow: 0 20px 35px rgba(8, 22, 63, 0.25);
+      object-fit: cover;
+    }
+
+    .neo-highlight {
+      background: var(--mac-accent-soft);
+      border: 1px solid rgba(10, 132, 255, 0.2);
+      border-radius: 20px;
+      padding: 1rem 1.25rem;
+      line-height: 1.6;
+    }
+
+    .neo-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.4rem 0.75rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.4);
+      border: 1px solid var(--mac-border);
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--mac-text-muted);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45);
+    }
+
+    .neo-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.65rem 1.4rem;
+      border-radius: 999px;
+      border: 1px solid var(--mac-border-strong);
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.4));
+      color: var(--mac-heading);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6), 0 12px 24px rgba(10, 20, 60, 0.18);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+    }
+
+    .neo-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6), 0 18px 28px rgba(10, 20, 60, 0.22);
+      color: var(--mac-accent);
+    }
+
+    .neo-btn.secondary {
+      background: linear-gradient(180deg, #0a84ff, #0060df);
+      border-color: rgba(0, 96, 223, 0.6);
+      color: #fff;
+    }
+
+    .neo-btn.secondary:hover {
+      box-shadow: 0 18px 30px rgba(10, 132, 255, 0.35);
+      color: #fff;
+    }
+
+    .neo-btn.ghost {
+      background: rgba(255, 255, 255, 0.25);
+      color: var(--mac-heading);
+    }
+
+    .neo-btn.ghost:hover {
+      color: var(--mac-accent);
+    }
+
+    .neo-section {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .neo-section-title {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.45rem 1rem;
+      background: rgba(255, 255, 255, 0.4);
+      border: 1px solid var(--mac-border);
+      border-radius: 999px;
+      font-size: 1rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--mac-text-muted);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.55);
+      width: fit-content;
+    }
+
+    .neo-grid {
+      display: grid;
+      gap: clamp(1.2rem, 2vw, 1.8rem);
+    }
+
+    @media (min-width: 768px) {
+      .neo-grid.two {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
-      @media (min-width: 900px) {
-        .neo-hero {
-          grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
-          align-items: center;
-        }
+      .neo-grid.three {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
       }
+    }
 
-      .neo-avatar {
-        border: 3px solid var(--neo-shadow);
-        border-radius: 32px;
-        box-shadow: 8px 8px 0 0 var(--neo-shadow);
-        object-fit: cover;
-      }
+    .neo-tag-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
 
-      .dark .neo-avatar {
-        border-color: #f8f8f8;
-        box-shadow: 8px 8px 0 0 #f8f8f8;
-      }
+    .neo-tag {
+      padding: 0.45rem 0.85rem;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.55);
+      border: 1px solid var(--mac-border);
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--mac-text-muted);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    }
 
-      .neo-section {
-        display: grid;
-        gap: 1.5rem;
-      }
+    .neo-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding-bottom: 0.1rem;
+      border-bottom: 1px solid rgba(10, 132, 255, 0.4);
+      font-weight: 500;
+      color: var(--mac-accent);
+    }
 
-      .neo-grid {
-        display: grid;
-        gap: 1.2rem;
-      }
+    .neo-link:hover {
+      border-color: var(--mac-accent);
+      color: var(--mac-accent);
+    }
 
-      @media (min-width: 768px) {
-        .neo-grid.two {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
+    footer.neo-card {
+      text-align: center;
+      padding: clamp(1.5rem, 3vw, 2rem);
+    }
 
-        .neo-grid.three {
-          grid-template-columns: repeat(3, minmax(0, 1fr));
-        }
-      }
+    .macos-dock {
+      width: min(520px, 78%);
+      margin: clamp(1.5rem, 4vw, 3rem) auto 0;
+      padding: 0.9rem 1.5rem;
+      display: flex;
+      justify-content: center;
+      gap: clamp(0.85rem, 2vw, 1.4rem);
+      border-radius: 24px;
+      background: linear-gradient(160deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.22));
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      box-shadow: 0 25px 45px rgba(9, 21, 64, 0.28);
+      backdrop-filter: blur(24px);
+    }
 
+    .macos-dock-item {
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.45);
+      box-shadow: 0 10px 20px rgba(9, 21, 64, 0.18);
+      font-size: 1.35rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .macos-dock-item:hover {
+      transform: translateY(-8px) scale(1.08);
+      box-shadow: 0 18px 34px rgba(9, 21, 64, 0.24);
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.5s ease, transform 0.6s ease;
+    }
+
+    .fade-in.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
       .fade-in {
-        opacity: 0;
-        transform: translateY(10px);
-        transition: opacity 0.5s ease, transform 0.5s ease;
+        opacity: 1;
+        transform: none;
       }
 
       .fade-in.show {
-        opacity: 1;
-        transform: translateY(0);
+        transition: none;
       }
-    </style>
-  </head>
 
-  <body class="antialiased light">
-    <div class="neo-shell mx-auto max-w-5xl px-6 py-12 md:py-16 space-y-12">
-      <header class="neo-card neo-hero p-6 md:p-8 fade-in">
-        <div class="space-y-6">
-          <h1 class="text-3xl md:text-5xl font-bold leading-tight tracking-tight">
-            Crafting bold, playful product experiences for the web.
-          </h1>
-          <p class="text-base md:text-lg leading-relaxed">
-            I love to explore and research new thing in Computer &amp; Science 🫶🏻. Currently focused on building performant React/Next.js apps and translating ideas into friendly interfaces.
+      .neo-card,
+      .neo-btn,
+      .macos-menu::after {
+        transition: none;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .macos-stage {
+        padding: clamp(1rem, 6vw, 1.75rem);
+        gap: 1.4rem;
+      }
+
+      .macos-menubar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.65rem;
+        padding: 0.65rem 1rem;
+        border-radius: 20px;
+      }
+
+      .macos-menubar-left {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.55rem;
+      }
+
+      .macos-menubar-left .macos-menu {
+        font-size: 0.85rem;
+      }
+
+      .macos-menubar-right {
+        justify-content: center;
+        gap: 0.8rem;
+        font-size: 0.82rem;
+      }
+
+      .macos-window {
+        border-radius: 20px;
+      }
+
+      .macos-window-chrome {
+        grid-template-columns: auto 1fr;
+        gap: 0.75rem;
+        padding: 0.75rem 1.1rem;
+      }
+
+      .macos-window-title {
+        font-size: 0.95rem;
+      }
+
+      .macos-window-actions {
+        display: none;
+      }
+
+      .macos-window-body {
+        padding: clamp(1.5rem, 7vw, 2.25rem);
+        gap: clamp(1.6rem, 6vw, 2.4rem);
+      }
+
+      .neo-card {
+        border-radius: 22px;
+        padding: clamp(1.15rem, 5vw, 1.6rem);
+      }
+
+      .neo-card.neo-hero {
+        padding: clamp(1.4rem, 6vw, 1.9rem);
+      }
+
+      .neo-section-title {
+        font-size: 0.85rem;
+        letter-spacing: 0.1em;
+        padding: 0.35rem 0.8rem;
+      }
+
+      .neo-btn {
+        width: 100%;
+        justify-content: center;
+        font-size: 0.95rem;
+        padding: 0.6rem 1rem;
+      }
+
+      .neo-highlight {
+        padding: 0.85rem 1rem;
+      }
+
+      .neo-pill {
+        font-size: 0.75rem;
+        padding: 0.35rem 0.65rem;
+      }
+
+      .neo-tag-grid {
+        gap: 0.45rem;
+      }
+
+      .neo-tag {
+        font-size: 0.75rem;
+      }
+
+      .macos-dock {
+        width: min(420px, 92%);
+        gap: 0.9rem;
+        padding: 0.75rem 1.15rem;
+      }
+
+      .macos-dock-item {
+        width: 44px;
+        height: 44px;
+        border-radius: 14px;
+        font-size: 1.15rem;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .macos-menubar-left {
+        gap: 0.45rem;
+      }
+
+      .macos-menubar-left .macos-menu {
+        font-size: 0.78rem;
+      }
+
+      .macos-menubar-right {
+        font-size: 0.75rem;
+      }
+
+      .macos-window-title {
+        font-size: 0.9rem;
+      }
+
+      .neo-btn {
+        font-size: 0.9rem;
+      }
+
+      .neo-card.neo-hero .space-y-6 {
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body class="antialiased">
+  <div class="macos-stage">
+    <nav class="macos-menubar" aria-label="macOS menu bar">
+      <div class="macos-menubar-left">
+        <span class="macos-apple" aria-hidden="true"></span>
+        <a class="macos-menu" href="#hero">Portfolio</a>
+        <a class="macos-menu" href="#skills">Skillset</a>
+        <a class="macos-menu" href="#projects">Projects</a>
+        <a class="macos-menu" href="#experience">Experience</a>
+        <a class="macos-menu" href="#contact">Contact</a>
+      </div>
+      <div class="macos-menubar-right">
+        <span class="macos-status" data-menubar-time>Mon 09:41</span>
+        <span class="macos-status">🔋 100%</span>
+      </div>
+    </nav>
+
+    <main class="macos-window">
+      <div class="macos-window-chrome">
+        <div class="macos-traffic-lights" role="presentation" aria-hidden="true">
+          <span class="macos-light" data-tone="close"></span>
+          <span class="macos-light" data-tone="minimize"></span>
+          <span class="macos-light" data-tone="fullscreen"></span>
+        </div>
+        <p class="macos-window-title">Finder · Portfolio</p>
+        <div class="macos-window-actions" aria-hidden="true">
+          <span>⌘</span>
+          <span>⇧</span>
+          <span>N</span>
+        </div>
+      </div>
+
+      <div class="macos-window-body">
+        <header id="hero" class="neo-card neo-hero fade-in p-6 md:p-8">
+          <div class="space-y-6">
+            <div class="flex flex-wrap items-center gap-2 text-xs uppercase tracking-[0.28em] text-slate-500">
+              <span>Finder</span>
+              <span>•</span>
+              <span>Favorites</span>
+            </div>
+            <h1 class="text-3xl md:text-5xl font-bold leading-tight tracking-tight text-slate-900">
+              Crafting native-inspired product experiences for the web.
+            </h1>
+            <p class="text-base md:text-lg leading-relaxed text-slate-700">
+              I love exploring the intersection of delightful interfaces and resilient architecture 🫶🏻. Today I'm
+              focused on performant React/Next.js apps and translating complex flows into human-friendly tools.
+            </p>
+            <div class="flex flex-wrap gap-3">
+              <a href="mailto:ahmadyudafahrudin@gmail.com" class="neo-btn">Email</a>
+              <a href="https://www.linkedin.com/in/yudafahrudin" class="neo-btn secondary" target="_blank"
+                rel="noopener">LinkedIn</a>
+              <a href="https://github.com/yudafhd" class="neo-btn ghost" target="_blank" rel="noopener">GitHub</a>
+            </div>
+            <div class="neo-highlight text-sm md:text-base leading-relaxed text-slate-700">
+              <strong>Currently:</strong> Growing the national EMR experience at PT Pertamina Bina Medika IHC while
+              prototyping Apple-esque UI explorations after hours.
+            </div>
+          </div>
+          <div class="flex flex-col items-center gap-4 text-center md:text-right md:items-end">
+            <img src="./assets/photo-profile.jpeg" alt="Foto Yuda"
+              class="neo-avatar w-full max-w-[220px] md:max-w-xs h-auto" />
+            <span class="font-semibold text-slate-800">Yuda Fahrudin — Software Engineer</span>
+            <div class="neo-pill">Based in Indonesia · Remote friendly</div>
+          </div>
+        </header>
+
+        <section class="neo-section fade-in" aria-labelledby="skills">
+          <span id="skills" class="neo-section-title">Skillset</span>
+          <div class="neo-grid two">
+            <article class="neo-card p-5 space-y-4" data-tone="alt">
+              <div class="flex items-center gap-2">
+                <span class="text-2xl" aria-hidden="true">🧰</span>
+                <h3 class="text-xl font-semibold text-slate-900">Core Stack</h3>
+              </div>
+              <div class="neo-tag-grid">
+                <span class="neo-tag">TypeScript</span>
+                <span class="neo-tag">React.js</span>
+                <span class="neo-tag">Next.js</span>
+                <span class="neo-tag">Node.js</span>
+                <span class="neo-tag">GraphQL</span>
+                <span class="neo-tag">REST APIs</span>
+                <span class="neo-tag">Jest</span>
+                <span class="neo-tag">Git Review</span>
+                <span class="neo-tag">SQL</span>
+                <span class="neo-tag">Design Systems</span>
+                <span class="neo-tag">UI/UX Engineering</span>
+              </div>
+            </article>
+            <article class="neo-card p-5 space-y-4">
+              <div class="flex items-center gap-2">
+                <span class="text-2xl" aria-hidden="true">🧭</span>
+                <h3 class="text-xl font-semibold text-slate-900">Supporting</h3>
+              </div>
+              <div class="neo-tag-grid">
+                <span class="neo-tag">React Native</span>
+                <span class="neo-tag">Angular</span>
+                <span class="neo-tag">Ruby on Rails</span>
+                <span class="neo-tag">Performance</span>
+                <span class="neo-tag">Authentication</span>
+                <span class="neo-tag">GCP Basics</span>
+              </div>
+              <div class="neo-highlight text-sm leading-relaxed text-slate-700">
+                Domains: Healthcare EMR, SatuSehat, E-commerce Logistics, Insurance, Construction.
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="neo-section fade-in" aria-labelledby="projects">
+          <span id="projects" class="neo-section-title">Projects</span>
+          <div class="neo-grid">
+            <a class="neo-card p-5 flex flex-col gap-4 hover:no-underline" href="https://www.volaroid.com"
+              target="_blank" rel="noopener">
+              <div class="flex items-start justify-between gap-3">
+                <div class="space-y-1">
+                  <h3 class="text-2xl font-semibold text-slate-900">Volaroid</h3>
+                  <p class="text-sm md:text-base leading-relaxed text-slate-600">Creative studio: filters, grids, and
+                    reels templates for playful storytelling.</p>
+                </div>
+                <span class="text-3xl" aria-hidden="true">✨</span>
+              </div>
+              <span class="neo-link text-sm md:text-base">Visit project</span>
+            </a>
+          </div>
+        </section>
+
+        <section class="neo-section fade-in" aria-labelledby="experience">
+          <span id="experience" class="neo-section-title">Experience</span>
+          <div class="neo-grid">
+            <article class="neo-card p-5 space-y-4">
+              <header class="flex items-start justify-between gap-3">
+                <div class="space-y-1">
+                  <h3 class="text-lg md:text-xl font-semibold text-slate-900">Software Engineer — PT Pertamina Bina
+                    Medika IHC</h3>
+                  <p class="text-sm text-slate-600">Feb 2024 – Present · Indonesia (Hybrid)</p>
+                </div>
+                <span class="text-3xl" aria-hidden="true">🏥</span>
+              </header>
+              <ul class="list-disc pl-5 space-y-1.5 text-sm md:text-base leading-relaxed text-slate-700">
+                <li>Developed EMR modules for SIMRS (Inpatient Initial Assessment, CPPT, etc.).</li>
+                <li>Built <strong>SatuSehat</strong> verification module.</li>
+                <li>Created a scalable design system using <strong>Ant Design (ANTD)</strong>.</li>
+                <li>Optimized performance and developer experience using <strong>Next.js</strong>.</li>
+                <li>Performed code reviews to ensure clean code and detect code smells.</li>
+                <li>Conducted R&amp;D and collaborated to achieve the best UI/UX design.</li>
+              </ul>
+              <p class="text-xs uppercase tracking-wide text-slate-500">
+                Stack: Software Design · React.js · Software Infrastructure · Next.js · Git · TypeScript · GCP · Query
+                Writing · Web Applications
+              </p>
+            </article>
+
+            <article class="neo-card p-5 space-y-4" data-tone="alt">
+              <header class="flex items-start justify-between gap-3">
+                <div class="space-y-1">
+                  <h3 class="text-lg md:text-xl font-semibold text-slate-900">Associate Software Engineer — Rey.id</h3>
+                  <p class="text-sm text-slate-600">Jan 2023 – Dec 2023 · Jakarta (Remote)</p>
+                </div>
+                <span class="text-3xl" aria-hidden="true">🏥</span>
+              </header>
+              <ul class="list-disc pl-5 space-y-1.5 text-sm md:text-base leading-relaxed text-slate-700">
+                <li>Built a business dashboard using <strong>Next.js</strong>.</li>
+                <li>Contributed to the design system and UI components.</li>
+                <li>Optimized payment page usability and conversion rate.</li>
+                <li>Enhanced web and mobile responsiveness of the main page.</li>
+                <li>Implemented unit testing with <strong>Jest</strong> and performed regular code reviews.</li>
+              </ul>
+              <p class="text-xs uppercase tracking-wide text-slate-500">
+                Stack: GraphQL · React.js · Next.js · Git · TypeScript · Web Applications
+              </p>
+            </article>
+
+            <article class="neo-card p-5 space-y-4">
+              <header class="flex items-start justify-between gap-3">
+                <div class="space-y-1">
+                  <h3 class="text-lg md:text-xl font-semibold text-slate-900">Associate Software Engineer — SIRCLO</h3>
+                  <p class="text-sm text-slate-600">Aug 2021 – Jan 2023 · Tangerang (Remote)</p>
+                </div>
+                <span class="text-3xl" aria-hidden="true">🛒</span>
+              </header>
+              <ul class="list-disc pl-5 space-y-1.5 text-sm md:text-base leading-relaxed text-slate-700">
+                <li>Improved shipping address logic and optimized the shipping page UI.</li>
+                <li>Refined <strong>PrivyID</strong> integration flow.</li>
+                <li>Developed and maintained reusable UI components.</li>
+                <li>Implemented unit tests with <strong>Jest</strong> and built API Gateway using <strong>Apollo
+                    GraphQL</strong>.</li>
+              </ul>
+              <p class="text-xs uppercase tracking-wide text-slate-500">
+                Stack: GraphQL · Node.js · REST APIs · React Hooks · React.js · JavaScript · Git · TypeScript · Web
+                Applications
+              </p>
+            </article>
+
+            <article class="neo-card p-5 space-y-4" data-tone="alt">
+              <header class="flex items-start justify-between gap-3">
+                <div class="space-y-1">
+                  <h3 class="text-lg md:text-xl font-semibold text-slate-900">Frontend Developer — Wave Consulting
+                    Indonesia</h3>
+                  <p class="text-sm text-slate-600">Aug 2020 – Aug 2021 · Jakarta (Remote)</p>
+                </div>
+                <span class="text-3xl" aria-hidden="true">🌊</span>
+              </header>
+              <ul class="list-disc pl-5 space-y-1.5 text-sm md:text-base leading-relaxed text-slate-700">
+                <li>Built a complaint handling dashboard using <strong>React.js</strong>.</li>
+                <li>Developed and maintained UI components.</li>
+                <li>Collaborated with cross-functional teams to deliver high-quality software.</li>
+              </ul>
+              <p class="text-xs uppercase tracking-wide text-slate-500">
+                Stack: GraphQL · REST APIs · React Native · React.js · JavaScript · Git · TypeScript · Web Applications
+              </p>
+            </article>
+
+            <article class="neo-card p-5 space-y-4">
+              <header class="flex items-start justify-between gap-3">
+                <div class="space-y-1">
+                  <h3 class="text-lg md:text-xl font-semibold text-slate-900">Associate Software Engineer — Twiscode
+                  </h3>
+                  <p class="text-sm text-slate-600">Sep 2019 – Jul 2020 · Jakarta (On-site)</p>
+                </div>
+                <span class="text-3xl" aria-hidden="true">🎯</span>
+              </header>
+              <ul class="list-disc pl-5 space-y-1.5 text-sm md:text-base leading-relaxed text-slate-700">
+                <li>Developed applications using <strong>React.js</strong>.</li>
+                <li>Implemented REST APIs using <strong>Node.js</strong>.</li>
+                <li>Collaborated with team members to deliver high-quality software.</li>
+              </ul>
+              <p class="text-xs uppercase tracking-wide text-slate-500">
+                Stack: Node.js · REST APIs · React.js · JavaScript · Git · TypeScript · Web Applications
+              </p>
+            </article>
+
+            <article class="neo-card p-5 space-y-4" data-tone="alt">
+              <header class="flex items-start justify-between gap-3">
+                <div class="space-y-1">
+                  <h3 class="text-lg md:text-xl font-semibold text-slate-900">Frontend Developer — Code Indo</h3>
+                  <p class="text-sm text-slate-600">Jan 2019 – Jun 2019 · Surabaya (On-site)</p>
+                </div>
+                <span class="text-3xl" aria-hidden="true">🧩</span>
+              </header>
+              <ul class="list-disc pl-5 space-y-1.5 text-sm md:text-base leading-relaxed text-slate-700">
+                <li>Developed multiple projects using <strong>React.js</strong> and <strong>Node.js</strong>.</li>
+              </ul>
+              <p class="text-xs uppercase tracking-wide text-slate-500">
+                Stack: Node.js · REST APIs · React.js · Redux · JavaScript · Git
+              </p>
+            </article>
+
+            <article class="neo-card p-5 space-y-4">
+              <header class="flex items-start justify-between gap-3">
+                <div class="space-y-1">
+                  <h3 class="text-lg md:text-xl font-semibold text-slate-900">React Native Developer — Hubble</h3>
+                  <p class="text-sm text-slate-600">Nov 2017 – Oct 2018 · Singapore (Remote)</p>
+                </div>
+                <span class="text-3xl" aria-hidden="true">🏗️</span>
+              </header>
+              <ul class="list-disc pl-5 space-y-1.5 text-sm md:text-base leading-relaxed text-slate-700">
+                <li>Fixed bugs and maintained <strong>React Native</strong> mobile applications.</li>
+                <li>Supported and maintained several APIs built with <strong>Ruby on Rails</strong>.</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <footer id="contact" class="neo-card fade-in p-6 md:p-8 text-center space-y-3" data-tone="alt">
+          <p class="text-sm md:text-base text-slate-700">
+            © <span id="year"></span> @yudafhd — Made with caffeine, curiosity, and a macOS-inspired desk setup.
           </p>
-          <div class="flex flex-wrap gap-3">
-            <a href="mailto:ahmadyudafahrudin@gmail.com" class="neo-btn">Email</a>
-            <a href="https://www.linkedin.com/in/yudafahrudin" class="neo-btn secondary" target="_blank" rel="noopener">Linkedin</a>
-            <a href="https://github.com/yudafhd" class="neo-btn ghost" target="_blank" rel="noopener">GitHub</a>
+          <div class="flex flex-wrap justify-center gap-3">
+            <a class="neo-link text-sm md:text-base" href="mailto:ahmadyudafahrudin@gmail.com">Email</a>
+            <a class="neo-link text-sm md:text-base" href="https://wa.me/085708880099" target="_blank"
+              rel="noopener">WhatsApp</a>
+            <a class="neo-link text-sm md:text-base" href="https://www.linkedin.com/in/yudafahrudin" target="_blank"
+              rel="noopener">LinkedIn</a>
           </div>
-          <div class="neo-highlight text-sm md:text-base leading-relaxed">
-            <strong>Currently:</strong> Growing the national EMR experience at PT Pertamina Bina Medika IHC while tinkering with creative tooling side projects.
-          </div>
-        </div>
-        <div class="flex flex-col items-center gap-4">
-          
-          <img src="./assets/photo-profile.jpeg" alt="Foto Yuda" class="neo-avatar w-full max-w-[220px] md:max-w-xs h-auto" />
-          <span class="font-bold" >Yuda Fahrudin - Software Engineer</span>
-          <div class="neo-pill">Based in Indonesia · Remote friendly</div>
-        </div>
-      </header>
+        </footer>
+      </div>
+    </main>
 
-      <section class="neo-section fade-in" aria-labelledby="skills">
-        <span id="skills" class="neo-section-title">Skillset</span>
-        <div class="neo-grid two">
-          <article class="neo-card p-5 space-y-4" data-tone="alt">
-            <div class="flex items-center gap-2">
-              <span class="text-2xl" aria-hidden>🧰</span>
-              <h3 class="text-xl font-semibold">Core Stack</h3>
-            </div>
-            <p class="text-sm md:text-base leading-relaxed">
-              Product engineering across the full stack, with a focus on building modular frontends and resilient platform foundations.
-            </p>
-            <div class="neo-tag-grid">
-              <span class="neo-tag">TypeScript</span>
-              <span class="neo-tag">React.js</span>
-              <span class="neo-tag">Next.js</span>
-              <span class="neo-tag">Node.js</span>
-              <span class="neo-tag">GraphQL</span>
-              <span class="neo-tag">REST APIs</span>
-              <span class="neo-tag">Jest</span>
-              <span class="neo-tag">Git Review</span>
-              <span class="neo-tag">SQL</span>
-              <span class="neo-tag">Design Systems</span>
-              <span class="neo-tag">UI/UX Engineering</span>
-            </div>
-          </article>
-          <article class="neo-card p-5 space-y-4">
-            <div class="flex items-center gap-2">
-              <span class="text-2xl" aria-hidden>🧭</span>
-              <h3 class="text-xl font-semibold">Supporting</h3>
-            </div>
-            <p class="text-sm md:text-base leading-relaxed">
-              Cross-functional experience that keeps deliveries smooth and collaborative across teams and platforms.
-            </p>
-            <div class="neo-tag-grid">
-              <span class="neo-tag">React Native</span>
-              <span class="neo-tag">Angular</span>
-              <span class="neo-tag">Ruby on Rails</span>
-              <span class="neo-tag">Performance</span>
-              <span class="neo-tag">Authentication</span>
-              <span class="neo-tag">GCP Basics</span>
-            </div>
-            <div class="neo-highlight text-sm leading-relaxed">
-              Domains: Healthcare EMR, SatuSehat, E-commerce Logistics, Insurance, Construction.
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section class="neo-section fade-in" aria-labelledby="projects">
-        <span id="projects" class="neo-section-title">Projects</span>
-        <div class="neo-grid">
-          <a class="neo-card p-5 flex flex-col gap-4" href="https://www.volaroid.com" target="_blank" rel="noopener">
-            <div class="flex items-start justify-between gap-3">
-              <div class="space-y-1">
-                <h3 class="text-2xl font-semibold">Volaroid</h3>
-                <p class="text-sm md:text-base leading-relaxed opacity-80">Creative studio: filters, grids, and reels templates for playful storytelling.</p>
-              </div>
-              <span class="text-3xl" aria-hidden>✨</span>
-            </div>
-            <span class="neo-link text-sm md:text-base">Visit project</span>
-          </a>
-          <!-- <a class="neo-card p-5 flex flex-col gap-4" data-tone="alt" href="https://gearscloud.com" target="_blank" rel="noopener">
-            <div class="flex items-start justify-between gap-3">
-              <div class="space-y-1">
-                <h3 class="text-2xl font-semibold">Gears Cloud</h3>
-                <p class="text-sm md:text-base leading-relaxed opacity-80">Utility toolbox for developers &amp; designers: formatters, converters, helpers.</p>
-              </div>
-              <span class="text-3xl" aria-hidden>⚙️</span>
-            </div>
-            <span class="neo-link text-sm md:text-base">Visit project</span>
-          </a> -->
-          <!-- <a class="neo-card p-5 flex flex-col gap-4" href="https://talkactivetome.vercel.app/" target="_blank" rel="noopener">
-            <div class="flex items-start justify-between gap-3">
-              <div class="space-y-1">
-                <h3 class="text-2xl font-semibold">Talkative To Me</h3>
-                <p class="text-sm md:text-base leading-relaxed opacity-80">AI-powered interview prep with live transcripts, scoring, and STAR summaries.</p>
-              </div>
-              <span class="text-3xl" aria-hidden>🗣️</span>
-            </div>
-            <span class="neo-link text-sm md:text-base">Visit project</span>
-          </a> -->
-        </div>
-      </section>
-
-      <section class="neo-section fade-in" aria-labelledby="experience">
-        <span id="experience" class="neo-section-title">Experience</span>
-        <div class="neo-grid">
-          <article class="neo-card p-5 space-y-4">
-            <header class="flex items-start justify-between gap-3">
-              <div class="space-y-1">
-                <h3 class="text-lg md:text-xl font-semibold">Software Engineer — PT Pertamina Bina Medika IHC</h3>
-                <p class="text-sm opacity-70">Feb 2024 – Present · Indonesia (Hybrid)</p>
-              </div>
-              <span class="text-3xl" aria-hidden>🏥</span>
-            </header>
-            <ul class="list-disc pl-5 space-y-1.5 text-sm md:text-base leading-relaxed">
-              <li>Developed EMR modules for SIMRS (Inpatient Initial Assessment, CPPT, etc.).</li>
-              <li>Built <strong>SatuSehat</strong> verification module.</li>
-              <li>Created a scalable design system using <strong>Ant Design (ANTD)</strong>.</li>
-              <li>Optimized performance and developer experience using <strong>Next.js</strong>.</li>
-              <li>Performed code reviews to ensure clean code and detect code smells.</li>
-              <li>Conducted R&amp;D and collaborated to achieve the best UI/UX design.</li>
-            </ul>
-            <p class="text-xs uppercase tracking-wide opacity-80">
-              Stack: Software Design · React.js · Software Infrastructure · Next.js · Git · TypeScript · GCP · Query Writing · Web Applications
-            </p>
-          </article>
-
-          <article class="neo-card p-5 space-y-4" data-tone="alt">
-            <header class="flex items-start justify-between gap-3">
-              <div class="space-y-1">
-                <h3 class="text-lg md:text-xl font-semibold">Associate Software Engineer — Rey.id</h3>
-                <p class="text-sm opacity-70">Jan 2023 – Dec 2023 · Jakarta (Remote)</p>
-              </div>
-              <span class="text-3xl" aria-hidden>🏥</span>
-            </header>
-            <ul class="list-disc pl-5 space-y-1.5 text-sm md:text-base leading-relaxed">
-              <li>Built a business dashboard using <strong>Next.js</strong>.</li>
-              <li>Contributed to the design system and UI components.</li>
-              <li>Optimized payment page usability and conversion rate.</li>
-              <li>Enhanced web and mobile responsiveness of the main page.</li>
-              <li>Implemented unit testing with <strong>Jest</strong> and performed regular code reviews.</li>
-            </ul>
-            <p class="text-xs uppercase tracking-wide opacity-80">
-              Stack: GraphQL · React.js · Next.js · Git · TypeScript · Web Applications
-            </p>
-          </article>
-
-          <article class="neo-card p-5 space-y-4">
-            <header class="flex items-start justify-between gap-3">
-              <div class="space-y-1">
-                <h3 class="text-lg md:text-xl font-semibold">Associate Software Engineer — SIRCLO</h3>
-                <p class="text-sm opacity-70">Aug 2021 – Jan 2023 · Tangerang (Remote)</p>
-              </div>
-              <span class="text-3xl" aria-hidden>🛒</span>
-            </header>
-            <ul class="list-disc pl-5 space-y-1.5 text-sm md:text-base leading-relaxed">
-              <li>Improved shipping address logic and optimized the shipping page UI.</li>
-              <li>Refined <strong>PrivyID</strong> integration flow.</li>
-              <li>Developed and maintained reusable UI components.</li>
-              <li>Implemented unit tests with <strong>Jest</strong> and built API Gateway using <strong>Apollo GraphQL</strong>.</li>
-            </ul>
-            <p class="text-xs uppercase tracking-wide opacity-80">
-              Stack: GraphQL · Node.js · REST APIs · React Hooks · React.js · JavaScript · Git · TypeScript · Web Applications
-            </p>
-          </article>
-
-          <article class="neo-card p-5 space-y-4" data-tone="alt">
-            <header class="flex items-start justify-between gap-3">
-              <div class="space-y-1">
-                <h3 class="text-lg md:text-xl font-semibold">Frontend Developer — Wave Consulting Indonesia</h3>
-                <p class="text-sm opacity-70">Jul 2019 – Aug 2021 · Jakarta (Remote)</p>
-              </div>
-              <span class="text-3xl" aria-hidden>📊</span>
-            </header>
-            <ul class="list-disc pl-5 space-y-1.5 text-sm md:text-base leading-relaxed">
-              <li>Built an accounting product using <strong>Angular 11</strong>.</li>
-              <li>Developed mobile features using <strong>React Native</strong>.</li>
-            </ul>
-            <p class="text-xs uppercase tracking-wide opacity-80">
-              Stack: Angular · AngularJS · React Native · TypeScript · REST APIs
-            </p>
-          </article>
-
-          <article class="neo-card p-5 space-y-4">
-            <header class="flex items-start justify-between gap-3">
-              <div class="space-y-1">
-                <h3 class="text-lg md:text-xl font-semibold">Full Stack Developer — Twiscode</h3>
-                <p class="text-sm opacity-70">Nov 2018 – Jul 2019 · Surabaya (On-site)</p>
-              </div>
-              <span class="text-3xl" aria-hidden>🧩</span>
-            </header>
-            <ul class="list-disc pl-5 space-y-1.5 text-sm md:text-base leading-relaxed">
-              <li>Developed multiple projects using <strong>React.js</strong> and <strong>Node.js</strong>.</li>
-            </ul>
-            <p class="text-xs uppercase tracking-wide opacity-80">
-              Stack: Node.js · REST APIs · React.js · Redux · JavaScript · Git
-            </p>
-          </article>
-
-          <article class="neo-card p-5 space-y-4" data-tone="alt">
-            <header class="flex items-start justify-between gap-3">
-              <div class="space-y-1">
-                <h3 class="text-lg md:text-xl font-semibold">React Native Developer — Hubble</h3>
-                <p class="text-sm opacity-70">Nov 2017 – Oct 2018 · Singapore (Remote)</p>
-              </div>
-              <span class="text-3xl" aria-hidden>🏗️</span>
-            </header>
-            <ul class="list-disc pl-5 space-y-1.5 text-sm md:text-base leading-relaxed">
-              <li>Fixed bugs and maintained <strong>React Native</strong> mobile applications.</li>
-              <li>Supported and maintained several APIs built with <strong>Ruby on Rails</strong>.</li>
-            </ul>
-          </article>
-        </div>
-      </section>
-
-      <footer class="neo-card p-6 text-center text-sm space-y-3 fade-in" data-tone="alt">
-        <p>© <span id="year"></span> @yudafhd — Built with love, Tailwind, and coffee.</p>
-        <div class="flex flex-wrap justify-center gap-3">
-          <a class="neo-link text-sm" href="mailto:ahmadyudafahrudin@gmail.com">Email</a>
-          <a class="neo-link text-sm" href="https://wa.me/085708880099" target="_blank" rel="noopener">WhatsApp</a>
-        </div>
-      </footer>
+    <div class="macos-dock fade-in" aria-label="Dock shortcuts">
+      <a class="macos-dock-item" href="mailto:ahmadyudafahrudin@gmail.com" aria-label="Email Yuda">
+        ✉️
+      </a>
+      <a class="macos-dock-item" href="https://www.linkedin.com/in/yudafahrudin" target="_blank" rel="noopener"
+        aria-label="LinkedIn profile">
+        💼
+      </a>
+      <a class="macos-dock-item" href="https://github.com/yudafhd" target="_blank" rel="noopener"
+        aria-label="GitHub profile">
+        🐙
+      </a>
     </div>
+  </div>
 
-    <!-- JSON-LD Person Schema (existing) -->
-    <script type="application/ld+json">
+  <!-- JSON-LD Person Schema (existing) -->
+  <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Person",
@@ -573,8 +941,8 @@
     }
     </script>
 
-    <!-- APPENDED: Structured data for Work Experience (kept separate to avoid changing the existing block) -->
-    <script type="application/ld+json">
+  <!-- APPENDED: Structured data for Work Experience (kept separate to avoid changing the existing block) -->
+  <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "ItemList",
@@ -590,53 +958,73 @@
     }
     </script>
 
-    <!-- Tiny helpers -->
-    <script>
-      // year
-      document.getElementById('year').textContent = new Date().getFullYear();
-      // reveal
-      window.addEventListener('load', () => {
-        document.querySelectorAll('.fade-in').forEach((el, i) => {
-          setTimeout(() => el.classList.add('show'), 80 * i);
-        });
+  <!-- Tiny helpers -->
+  <script>
+    const yearEl = document.getElementById('year');
+    if (yearEl) {
+      yearEl.textContent = new Date().getFullYear();
+    }
+
+    const menubarTimeEl = document.querySelector('[data-menubar-time]');
+    if (menubarTimeEl) {
+      const menubarFormatter = new Intl.DateTimeFormat('en-US', {
+        weekday: 'short',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: false
       });
 
-      const themeToggle = document.querySelector('[data-theme-toggle]');
-      if (themeToggle) {
-        const iconEl = themeToggle.querySelector('[data-theme-icon]');
-        const labelEl = themeToggle.querySelector('[data-theme-label]');
+      const updateMenubarTime = () => {
+        menubarTimeEl.textContent = menubarFormatter.format(new Date());
+      };
 
-        const resolveTheme = () => {
-          const datasetTheme = document.documentElement.dataset.theme;
-          if (datasetTheme === 'dark' || datasetTheme === 'light') return datasetTheme;
-          return document.documentElement.classList.contains('dark') ? 'dark' : 'light';
-        };
+      updateMenubarTime();
+      setInterval(updateMenubarTime, 60000);
+    }
 
-        const setButtonState = (theme) => {
-          const isDark = theme === 'dark';
-          const nextLabel = isDark ? 'Switch to light mode' : 'Switch to dark mode';
-          themeToggle.setAttribute('aria-pressed', String(isDark));
-          themeToggle.setAttribute('aria-label', nextLabel);
-          themeToggle.title = nextLabel;
+    window.addEventListener('load', () => {
+      document.querySelectorAll('.fade-in').forEach((el, i) => {
+        setTimeout(() => el.classList.add('show'), 80 * i);
+      });
+    });
 
-          if (iconEl) iconEl.textContent = isDark ? '🌙' : '🌞';
-          if (labelEl) labelEl.textContent = isDark ? 'Dark mode' : 'Light mode';
-        };
+    const themeToggle = document.querySelector('[data-theme-toggle]');
+    if (themeToggle) {
+      const iconEl = themeToggle.querySelector('[data-theme-icon]');
+      const labelEl = themeToggle.querySelector('[data-theme-label]');
 
-        document.addEventListener('themechange', (event) => {
-          const detailTheme = event.detail && typeof event.detail.theme === 'string' ? event.detail.theme : resolveTheme();
-          setButtonState(detailTheme);
-        });
+      const resolveTheme = () => {
+        const datasetTheme = document.documentElement.dataset.theme;
+        if (datasetTheme === 'dark' || datasetTheme === 'light') return datasetTheme;
+        return document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+      };
 
-        themeToggle.addEventListener('click', () => {
-          const next = typeof window.__toggleTheme === 'function'
-            ? window.__toggleTheme()
-            : (resolveTheme() === 'dark' ? 'light' : 'dark');
-          setButtonState(next);
-        });
+      const setButtonState = (theme) => {
+        const isDark = theme === 'dark';
+        const nextLabel = isDark ? 'Switch to light mode' : 'Switch to dark mode';
+        themeToggle.setAttribute('aria-pressed', String(isDark));
+        themeToggle.setAttribute('aria-label', nextLabel);
+        themeToggle.title = nextLabel;
 
-        setButtonState(resolveTheme());
-      }
-    </script>
-  </body>
+        if (iconEl) iconEl.textContent = isDark ? '🌙' : '🌞';
+        if (labelEl) labelEl.textContent = isDark ? 'Dark mode' : 'Light mode';
+      };
+
+      document.addEventListener('themechange', (event) => {
+        const detailTheme = event.detail && typeof event.detail.theme === 'string' ? event.detail.theme : resolveTheme();
+        setButtonState(detailTheme);
+      });
+
+      themeToggle.addEventListener('click', () => {
+        const next = typeof window.__toggleTheme === 'function'
+          ? window.__toggleTheme()
+          : (resolveTheme() === 'dark' ? 'light' : 'dark');
+        setButtonState(next);
+      });
+
+      setButtonState(resolveTheme());
+    }
+  </script>
+</body>
+
 </html>
