@@ -1,38 +1,61 @@
-# Friendster-style Portfolio
+# Yuda Fahrudin — Portfolio
 
-A single-page, Friendster-era inspired portfolio that lists projects immediately on load. Built with Tailwind via CDN, minimal custom CSS, and simple client-side logic.
+Modernized Friendster-inspired portfolio rebuilt with Next.js 16, TypeScript, and Tailwind CSS v4 (JIT). The site now runs as an App Router project with both the homepage and resume delivered as first-class routes.
 
-## Run on localhost
+## Requirements
 
-1) Start a static server (Python 3):
+- Node.js 18.18+ or 20+
+- npm 10+
+
+## Getting started
+
+Install dependencies (only required once):
+
 ```bash
-python3 -m http.server 8000
+npm install
 ```
 
-2) Open in your browser:
-- http://localhost:8000
+Run the development server:
 
-Notes:
-- Tailwind CSS is loaded via CDN. No build step is required.
+```bash
+npm run dev
+```
+
+Open http://localhost:3000 to browse the site. Edits inside `src/` hot-reload automatically.
+
+## Available scripts
+
+| Script       | Description                          |
+| ------------ | ------------------------------------ |
+| `npm run dev`   | Start Next.js in development mode     |
+| `npm run build` | Create an optimized production build  |
+| `npm run start` | Serve the production build locally    |
+| `npm run lint`  | Run ESLint with the Next.js config    |
 
 ## Project structure
 
-- Structure and markup: [index.html](index.html)
-- Tiny Tailwind-safe overrides: [css/style.css](css/style.css)
-- Client logic (fetch, render, search/filter/sort): [js/main.js](js/main.js)
-- Project data: [data/projects.json](data/projects.json)
-- Assets (profile photo, icons, thumbnails): [assets/](assets/)
+- `src/app/page.tsx` — Landing page with profile and interactive project explorer
+- `src/app/resume/page.tsx` — Resume route mirroring the downloadable PDF
+- `src/components/project-explorer.tsx` — Client component handling search/sort/grid rendering
+- `src/data/projects.ts` — Strongly typed project catalogue consumed by the explorer
+- `public/` — Favicons, manifest, profile photo, and downloadable PDF (`/Yuda_Resume_Oktober_2025.pdf`)
+- `next.config.ts` — Remote image configuration for external project thumbnails
 
-## Behavior
+## Features
 
-- Landing page shows the profile hero and the Projects grid by default.
-- Search, tag filters (AND logic), and sort (newest/oldest) operate entirely on the client.
-- Thumbnails:
-  - If an image is missing or fails to load, a retro SVG placeholder will be shown automatically by existing fallback logic in [js/main.js](js/main.js).
-- Accessibility:
-  - Semantic landmarks (header, main, sections), skip link, and ARIA attributes are present.
-  - Tag chips are keyboard-accessible and expose pressed state.
+- Client-side search with debounced filtering and newest/oldest sorting
+- Automatic technology cloud and Friendster-style project cards with SVG fallbacks
+- Remote image support for portfolio screenshots (Vercel, Google CDN, custom domains)
+- Resume page styled for on-screen reading with print-friendly tweaks; download button links to the bundled PDF
+- Shared Tailwind theme tokens providing the original friend-era colors, shadows, and gradients
 
-## Deploy
+## Data updates
 
-Since Tailwind is loaded via CDN and everything is static, you can host these files on any static host. No bundling/build is necessary.
+Project entries live in `src/data/projects.ts`. Update the array to add, edit, or remove items. Each entry supports:
+
+- `title`, `description`, `technologies`
+- Optional `liveUrl`, `repoUrl`, `image`, `date`, `tags`
+
+## Deployment notes
+
+Run `npm run build` before deploying. The generated `.next/` output can be served via Vercel, Netlify, or any environment that supports Next.js 16. Public assets resolve from the app root, so no additional path adjustments are required.
