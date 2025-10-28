@@ -50,7 +50,7 @@ export const projects: Project[] = [
       "Tailwind CSS",
       "Chrome Extension API",
     ],
-    liveUrl: "https://chrome.google.com/webstore/detail/katahari",
+    liveUrl: "https://chromewebstore.google.com/detail/katahari-quotes/gokhaldpmdmhahnljcjaoakkibhhkjmg",
     repoUrl: "https://github.com/yudafhd/katahari",
     image:
       "https://katahari-web.vercel.app/_next/image?url=%2Fapple-touch-icon.png&w=64&q=75",
@@ -79,7 +79,7 @@ export const projects: Project[] = [
       "Google Drive API",
       "Tailwind CSS",
     ],
-    liveUrl: "https://resume.volaroid.com",
+    liveUrl: "https://resumedrive.yudafhd.com",
     repoUrl: "https://github.com/yudafhd/resume-drive",
     image:
       "https://resumedrive.vercel.app/favicon.ico?favicon.9727083f.ico",
