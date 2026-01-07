@@ -23,6 +23,10 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'resumedrive.vercel.app',
       },
+      {
+        protocol: 'https',
+        hostname: 'play-lh.googleusercontent.com',
+      },
     ],
   },
 };

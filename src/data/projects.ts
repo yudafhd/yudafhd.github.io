@@ -10,6 +10,23 @@ export type Project = {
 };
 
 export const projects: Project[] = [
+    {
+    title: "Resume Drive (CV Maker)",
+    description:
+      "A web app for creating, saving, and printing JSON-based resumes. Integrated with Google Drive and Picker API for seamless data sync.",
+    technologies: [
+      "Next.js",
+      "React",
+      "Google Drive API",
+      "Tailwind CSS",
+    ],
+    liveUrl: "https://resumedrive.yudafhd.com",
+    repoUrl: "https://github.com/yudafhd/resume-drive",
+    image:
+      "https://resumedrive.vercel.app/favicon.ico?favicon.9727083f.ico",
+    date: "2025-10-25",
+    tags: ["resume-builder", "productivity"],
+  },
   {
     title: "Volaroid (Filter & Template Instagram)",
     description:
@@ -21,6 +38,16 @@ export const projects: Project[] = [
       "https://www.volaroid.com/_next/image?url=%2Fassets%2Flogo-ig.jpg&w=256&q=75",
     date: "2024-08-01",
     tags: ["photo-editor"],
+  },
+   {
+    title: "SIApps Mobile (Community App)",
+    description:
+      "SiApps GP Ansor is a digital application system developed to support administration, organizational management, and public services of Gerakan Pemuda Ansor. It was created to modernize the organization’s system and improve efficiency, transparency, and accessibility in managing member data, activities, as well as social and religious services across Indonesia.",
+    technologies: ["Android", "Mobile App"],
+    image:
+      "https://play-lh.googleusercontent.com/ToU_CUvU7qmQC1RS25Ym7HnuFAwOGOkdjwnGY7x2OBqqraAlBsX-zpOuPatT0uxkcu8=w480-h960-rw",
+    date: "2024-05-01",
+    tags: ["react-native", "android"],
   },
   {
     title: "Bookmark Saga (Chrome Extension Bookmark) ",
@@ -36,7 +63,7 @@ export const projects: Project[] = [
       "https://chromewebstore.google.com/detail/bookmark-saga/pbanibhcpbmjfnhabfimkgbhcbcenlln",
     repoUrl: "https://github.com/yudafhd/bookmark-saga",
     image:
-      "https://lh3.googleusercontent.com/CEV2yajFG40dKlmLIjrZJYNuFvTnZgBiSrssnC77mscoKDcEqUdzL_XcLayPW1PWfUFBUnU08_2jiDp9vvdHyvEJ=s120",
+      "https://lh3.googleusercontent.com/lfaBhTmBd8TqK532osSWd_k2ik_zHvZQB6KgHsGA2kSVbl5N638wLbdb1Gqrgih-OZ0FR8ZyKJFdIbDeydex1Xmdwg=s120",
     date: "2024-10-01",
     tags: ["extension", "productivity"],
   },
@@ -53,10 +80,11 @@ export const projects: Project[] = [
     liveUrl: "https://chromewebstore.google.com/detail/katahari-quotes/gokhaldpmdmhahnljcjaoakkibhhkjmg",
     repoUrl: "https://github.com/yudafhd/katahari",
     image:
-      "https://katahari-web.vercel.app/_next/image?url=%2Fapple-touch-icon.png&w=64&q=75",
+      "https://lh3.googleusercontent.com/M3MrEKTBJvh3j7ozYIn4XSyxt3SBISctMdAYh45WI4TDU03aRZlO_xpT7hHda70MTVCAJJoKRwHhmxLLKYQEiy8agnI=s120",
     date: "2024-05-06",
     tags: ["extension", "quotes"],
   },
+ 
   {
     title: "Gears Cloud (Online Tools)",
     description:
@@ -68,22 +96,5 @@ export const projects: Project[] = [
       "https://www.gearscloud.com/favicon.ico?favicon.bfa6e438.ico",
     date: "2024-03-15",
     tags: ["productivity"],
-  },
-  {
-    title: "Resume Drive (CV Maker)",
-    description:
-      "A web app for creating, saving, and printing JSON-based resumes. Integrated with Google Drive and Picker API for seamless data sync.",
-    technologies: [
-      "Next.js",
-      "React",
-      "Google Drive API",
-      "Tailwind CSS",
-    ],
-    liveUrl: "https://resumedrive.yudafhd.com",
-    repoUrl: "https://github.com/yudafhd/resume-drive",
-    image:
-      "https://resumedrive.vercel.app/favicon.ico?favicon.9727083f.ico",
-    date: "2025-10-25",
-    tags: ["resume-builder", "productivity"],
   },
 ];
