@@ -11,37 +11,38 @@ const outlineActions = [
 
 export default function ContactPage() {
   return (
-    <div className="min-h-screen bg-[#f4f2ed] pb-24 font-sans text-gray-900">
+    <div className="min-h-screen bg-[#f5f6fa] pb-28 font-sans text-[#111827]">
       <main className="px-4">
         <section className="mx-auto w-full max-w-xl space-y-6 py-8">
           <header className="text-center">
-            <h1 className="text-3xl font-bold text-gray-900">Get in touch</h1>
-            <p className="mt-2 text-sm text-gray-600">
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#007aff]">Contact</p>
+            <h1 className="mt-2 text-4xl font-bold tracking-tight text-[#111827]">Get in touch</h1>
+            <p className="mt-2 text-sm text-[#6b7280]">
               Let&apos;s build something useful — fast, privacy-first, and delightful.
             </p>
           </header>
 
           <div className="grid grid-cols-1 gap-5">
-            <article className="rounded-2xl border border-[#e5e2da] bg-white p-6 shadow-sm">
+            <article className="rounded-[28px] border border-[#e6ebf3] bg-white p-6 shadow-[0_18px_40px_-30px_rgba(15,23,42,0.45)]">
               <div className="flex flex-col items-center text-center">
                 <Image
                   src="/photo-profile.jpeg"
                   alt="Yuda Fahrudin"
                   width={112}
                   height={112}
-                  className="rounded-full border border-[#e5e2da] bg-[#f7f4eb] shadow-sm"
+                  className="rounded-[32px] border border-[#dbe3f0] bg-[#eef3fb] shadow-[0_16px_40px_-28px_rgba(15,23,42,0.5)]"
                   priority
                 />
-                <h2 className="mt-4 text-xl font-semibold text-gray-900">@yudafhd</h2>
-                <p className="text-sm text-gray-500">Software Engineer</p>
-                <p className="mt-4 text-sm text-gray-600">
+                <h2 className="mt-4 text-xl font-semibold tracking-tight text-[#111827]">@yudafhd</h2>
+                <p className="text-sm text-[#6b7280]">Software Engineer</p>
+                <p className="mt-4 text-sm text-[#6b7280]">
                   Shipping web apps and visual tools. Focus on performance, UX, and edge-friendly processing.
                 </p>
 
                 <div className="mt-5 flex w-full flex-col gap-2">
                   <a
                     href={primaryEmail}
-                    className="inline-flex items-center justify-center gap-2 rounded-full bg-[#0b1b3b] px-7 py-3 text-base font-semibold text-white shadow-[0_18px_40px_-20px_rgba(11,27,59,0.55)] transition hover:bg-[#0d234e] active:translate-y-[1px]"
+                    className="inline-flex items-center justify-center gap-2 rounded-full bg-[#007aff] px-7 py-3 text-base font-semibold text-white shadow-[0_18px_40px_-20px_rgba(0,122,255,0.55)] transition hover:bg-[#0a84ff] active:translate-y-[1px]"
                   >
                     <MailIcon className="h-4 w-4" />
                     Email me
@@ -53,14 +54,14 @@ export default function ContactPage() {
                         href={action.href}
                         target="_blank"
                         rel="noreferrer noopener"
-                        className="inline-flex items-center justify-center gap-2 rounded-full border border-[#d6d2c8] bg-white px-6 py-2.5 text-sm font-semibold text-gray-800 shadow-[0_18px_36px_-20px_rgba(14,27,46,0.25)] transition hover:bg-white/90 active:translate-y-[1px]"
+                        className="inline-flex items-center justify-center gap-2 rounded-full border border-[#dbe3f0] bg-[#f8fbff] px-6 py-2.5 text-sm font-semibold text-[#111827] shadow-[0_18px_36px_-24px_rgba(15,23,42,0.2)] transition hover:bg-white active:translate-y-[1px]"
                       >
                         <action.icon className="h-4 w-4" />
                         {action.label}
                       </a>
                     ))}
                   </div>
-                  <p className="mt-1 text-center text-xs text-gray-500">Prefer DM? Ping me on Linkedin.</p>
+                  <p className="mt-1 text-center text-xs text-[#8e8e93]">Prefer DM? Ping me on Linkedin.</p>
                 </div>
               </div>
             </article>

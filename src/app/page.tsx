@@ -15,13 +15,25 @@ export default function Page() {
   };
 
   return (
-    <div className="min-h-screen bg-[#f4f2ed] pb-24 font-sans text-gray-900">
+    <div className="min-h-screen bg-[#f5f6fa] pb-28 font-sans text-[#111827]">
       <Header />
 
-      <main className="space-y-6 pt-5">
+      <main className="space-y-8 pt-3">
         <section className="px-4">
-          <div className="mx-auto max-w-xl space-y-3">
-            <div className="space-y-2">
+          <div className="mx-auto max-w-xl space-y-5">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#007aff]">
+                Featured Projects
+              </p>
+              <h1 className="mt-2 text-4xl font-bold tracking-tight text-[#111827]">
+                Built like polished apps.
+              </h1>
+              <p className="mt-2 max-w-lg text-sm leading-6 text-[#6b7280]">
+                A curated list of products, experiments, and tools presented with an App Store-inspired layout.
+              </p>
+            </div>
+
+            <div className="space-y-3">
               {projects.map((app) => (
                 <AppCard
                   key={app.title}

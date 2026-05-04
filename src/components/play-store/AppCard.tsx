@@ -28,26 +28,29 @@ export default function AppCard({ title, developer, description, category, ratin
     return (
         <button
             onClick={onClick}
-            className="flex w-full items-center gap-3 border border-[#e5e2da] bg-[#fcfcfb] px-3 py-2 text-left shadow-sm transition hover:border-emerald-300"
+            className="flex w-full items-center gap-4 rounded-[28px] border border-[#e6ebf3] bg-white px-4 py-4 text-left shadow-[0_18px_40px_-30px_rgba(15,23,42,0.45)] transition hover:-translate-y-0.5 hover:shadow-[0_24px_48px_-28px_rgba(15,23,42,0.35)]"
         >
-            <div className="relative h-12 w-12 overflow-hidden rounded-xl bg-[#f0eee6] text-sm font-semibold text-emerald-600">
+            <div className="relative h-16 w-16 overflow-hidden rounded-[20px] bg-[#eef3fb] text-sm font-semibold text-[#007aff] shadow-[inset_0_1px_0_rgba(255,255,255,0.8)]">
                 {image ? (
-                    <Image src={image} alt={title} fill sizes="48px" className="object-cover" />
+                    <Image src={image} alt={title} fill sizes="64px" className="object-cover" />
                 ) : (
                     <span className="flex h-full w-full items-center justify-center">{title.charAt(0)}</span>
                 )}
             </div>
             <div className="min-w-0 flex-1">
-                <p className="truncate text-sm font-semibold text-gray-900">{title}</p>
-                <p className="truncate text-xs text-gray-500">{developer}</p>
-                <p className="text-xs text-gray-400 line-clamp-2">{description || "Tailored suggestion"}</p>
+                <p className="truncate text-base font-semibold tracking-tight text-[#111827]">{title}</p>
+                <p className="truncate text-sm text-[#6b7280]">{developer}</p>
+                <p className="mt-1 text-xs leading-5 text-[#9ca3af] line-clamp-2">{description || "Tailored suggestion"}</p>
             </div>
-            <div className="flex flex-col items-end gap-1 text-[11px] font-semibold text-gray-500">
-                <span className="flex items-center gap-1">
-                    <StarIcon className="h-3.5 w-3.5 text-amber-400" />
+            <div className="flex flex-col items-end gap-2">
+                <span className="rounded-full bg-[#f2f4f8] px-4 py-1.5 text-xs font-bold tracking-wide text-[#007aff]">
+                    GET
+                </span>
+                <span className="flex items-center gap-1 text-[11px] font-semibold text-[#6b7280]">
+                    <StarIcon className="h-3.5 w-3.5 text-[#ff9f0a]" />
                     {rating.toFixed(1)}
                 </span>
-                <span className="rounded-full bg-[#f1efe7] px-2 py-0.5 text-[10px] uppercase tracking-wide text-gray-500">
+                <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#9ca3af]">
                     {category || "Utility"}
                 </span>
             </div>

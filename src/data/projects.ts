@@ -10,7 +10,7 @@ export type Project = {
 };
 
 export const projects: Project[] = [
-    {
+  {
     title: "Resume Drive (CV Maker)",
     description:
       "A web app for creating, saving, and printing JSON-based resumes. Integrated with Google Drive and Picker API for seamless data sync.",
@@ -28,22 +28,24 @@ export const projects: Project[] = [
     tags: ["resume-builder", "productivity"],
   },
   {
-    title: "Volaroid (Filter & Template Instagram)",
+    title: "Volaroid (AI Prompt Library for Content Creators)",
     description:
-      "A web-based photo editor featuring Polaroid-style frames, filters, and templates. Designed with a cosmic and pastel iOS-like aesthetic.",
+      "A prompt-sharing platform for content creators featuring Gemini and CapCut-style prompts, AI image references, and ready-to-use creative ideas across visual styles and social content formats.",
     technologies: ["Next.js", "React", "Tailwind CSS", "Supabase"],
     liveUrl: "https://volaroid.com",
     repoUrl: "https://github.com/yudafhd/volaroid",
     image:
-      "https://www.volaroid.com/_next/image?url=%2Fassets%2Flogo-ig.jpg&w=256&q=75",
+      "https://www.volaroid.com/_next/static/media/icon.a1022a25.png",
     date: "2024-08-01",
-    tags: ["photo-editor"],
+    tags: ["ai-prompts", "content-creator", "gemini", "capcut"],
   },
-   {
+  {
     title: "SIApps Mobile (Community App)",
     description:
       "SiApps GP Ansor is a digital application system developed to support administration, organizational management, and public services of Gerakan Pemuda Ansor. It was created to modernize the organization’s system and improve efficiency, transparency, and accessibility in managing member data, activities, as well as social and religious services across Indonesia.",
     technologies: ["Android", "Mobile App"],
+    liveUrl:
+      "https://play.google.com/store/apps/details?id=com.si_tech.siapps&hl=id&gl=US",
     image:
       "https://play-lh.googleusercontent.com/ToU_CUvU7qmQC1RS25Ym7HnuFAwOGOkdjwnGY7x2OBqqraAlBsX-zpOuPatT0uxkcu8=w480-h960-rw",
     date: "2024-05-01",
@@ -83,18 +85,5 @@ export const projects: Project[] = [
       "https://lh3.googleusercontent.com/M3MrEKTBJvh3j7ozYIn4XSyxt3SBISctMdAYh45WI4TDU03aRZlO_xpT7hHda70MTVCAJJoKRwHhmxLLKYQEiy8agnI=s120",
     date: "2024-05-06",
     tags: ["extension", "quotes"],
-  },
- 
-  {
-    title: "Gears Cloud (Online Tools)",
-    description:
-      "An all-in-one online toolkit offering converters, formatters, and calculators. Modular and system-driven UI built for accessibility and speed.",
-    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase"],
-    liveUrl: "https://gearscloud.com",
-    repoUrl: "https://github.com/yudafhd/gears-cloud",
-    image:
-      "https://www.gearscloud.com/favicon.ico?favicon.bfa6e438.ico",
-    date: "2024-03-15",
-    tags: ["productivity"],
-  },
+  }
 ];

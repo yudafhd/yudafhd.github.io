@@ -70,8 +70,8 @@ export default function BottomNav() {
     };
 
     return (
-        <nav className="fixed inset-x-0 bottom-0 z-40 py-2 pb-0">
-            <div className="mx-auto flex max-w-xl border border-[#e5e2da] bg-[#fcfcfb] items-center justify-between p-2 px-10">
+        <nav className="fixed inset-x-0 bottom-0 z-40 px-4 py-3 pb-2">
+            <div className="mx-auto flex max-w-xl items-center justify-between rounded-[28px] border border-white/70 bg-white/85 p-3 px-10 shadow-[0_22px_60px_-28px_rgba(15,23,42,0.45)] backdrop-blur-xl">
                 {navItems.map((item) => {
                     const active = isActive(item.id, item.href);
                     const Icon = active ? item.activeIcon : item.icon;
@@ -79,10 +79,10 @@ export default function BottomNav() {
                         <button
                             key={item.id}
                             onClick={() => handleClick(item.id, item.href)}
-                            className={`flex flex-col items-center gap-1 text-xs font-semibold ${active ? "text-emerald-600" : "text-gray-500"
+                            className={`flex flex-col items-center gap-1 text-xs font-semibold ${active ? "text-[#007aff]" : "text-[#8e8e93]"
                                 }`}
                         >
-                            <Icon className={`h-6 w-6 ${active ? "text-emerald-600" : "text-gray-500"}`} />
+                            <Icon className={`h-6 w-6 ${active ? "text-[#007aff]" : "text-[#8e8e93]"}`} />
                             <span>{item.label}</span>
                         </button>
                     );
