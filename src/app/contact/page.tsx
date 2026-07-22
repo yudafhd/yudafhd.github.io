@@ -1,8 +1,12 @@
 "use client";
 
 import Image from "next/image";
-import BottomNav from "@/components/play-store/BottomNav";
-const primaryEmail = "mailto:ahmadyudafahrudin@gmail.com?subject=Project%20Inquiry&body=Hi%20Yuda,%0A%0AHere%20is%20a%20brief%20about%20my%20project:%0A-%20Goal:%0A-%20Scope:%0A-%20Deadline:%0A-%20References:%0A%0AThanks!";
+import { Mail, Send, MessageSquare } from "lucide-react";
+import Header from "@/components/app-store/Header";
+import BottomNav from "@/components/app-store/BottomNav";
+
+const primaryEmail =
+  "mailto:ahmadyudafahrudin@gmail.com?subject=Project%20Inquiry&body=Hi%20Yuda,%0A%0AHere%20is%20a%20brief%20about%20my%20project:%0A-%20Goal:%0A-%20Scope:%0A-%20Deadline:%0A-%20References:%0A%0AThanks!";
 
 const outlineActions = [
   { label: "LinkedIn", href: "https://www.linkedin.com/in/yudafahrudin", icon: LinkedinIcon },
@@ -11,61 +15,109 @@ const outlineActions = [
 
 export default function ContactPage() {
   return (
-    <div className="min-h-screen bg-[#f5f6fa] pb-28 font-sans text-[#111827]">
-      <main className="px-4">
-        <section className="mx-auto w-full max-w-xl space-y-6 py-8">
-          <header className="text-center">
-            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#007aff]">Contact</p>
-            <h1 className="mt-2 text-4xl font-bold tracking-tight text-[#111827]">Get in touch</h1>
-            <p className="mt-2 text-sm text-[#6b7280]">
-              Let&apos;s build something useful — fast, privacy-first, and delightful.
-            </p>
-          </header>
+    <div className="min-h-screen bg-[#f2f2f7] pb-28 font-sans text-[#1c1c1e]">
+      <Header title="Support" subtitle="DEVELOPER CONTACT" />
 
-          <div className="grid grid-cols-1 gap-5">
-            <article className="rounded-[28px] border border-[#e6ebf3] bg-white p-6 shadow-[0_18px_40px_-30px_rgba(15,23,42,0.45)]">
-              <div className="flex flex-col items-center text-center">
-                <Image
-                  src="/photo-profile.jpeg"
-                  alt="Yuda Fahrudin"
-                  width={112}
-                  height={112}
-                  className="rounded-[32px] border border-[#dbe3f0] bg-[#eef3fb] shadow-[0_16px_40px_-28px_rgba(15,23,42,0.5)]"
-                  priority
-                />
-                <h2 className="mt-4 text-xl font-semibold tracking-tight text-[#111827]">@yudafhd</h2>
-                <p className="text-sm text-[#6b7280]">Software Engineer</p>
-                <p className="mt-4 text-sm text-[#6b7280]">
-                  Shipping web apps and visual tools. Focus on performance, UX, and edge-friendly processing.
-                </p>
-
-                <div className="mt-5 flex w-full flex-col gap-2">
-                  <a
-                    href={primaryEmail}
-                    className="inline-flex items-center justify-center gap-2 rounded-full bg-[#007aff] px-7 py-3 text-base font-semibold text-white shadow-[0_18px_40px_-20px_rgba(0,122,255,0.55)] transition hover:bg-[#0a84ff] active:translate-y-[1px]"
-                  >
-                    <MailIcon className="h-4 w-4" />
-                    Email me
-                  </a>
-                  <div className="grid grid-cols-2 gap-2">
-                    {outlineActions.map((action) => (
-                      <a
-                        key={action.label}
-                        href={action.href}
-                        target="_blank"
-                        rel="noreferrer noopener"
-                        className="inline-flex items-center justify-center gap-2 rounded-full border border-[#dbe3f0] bg-[#f8fbff] px-6 py-2.5 text-sm font-semibold text-[#111827] shadow-[0_18px_36px_-24px_rgba(15,23,42,0.2)] transition hover:bg-white active:translate-y-[1px]"
-                      >
-                        <action.icon className="h-4 w-4" />
-                        {action.label}
-                      </a>
-                    ))}
-                  </div>
-                  <p className="mt-1 text-center text-xs text-[#8e8e93]">Prefer DM? Ping me on Linkedin.</p>
-                </div>
-              </div>
-            </article>
+      <main className="mx-auto max-w-2xl px-5 space-y-6">
+        <section className="ios-card overflow-hidden p-6 sm:p-8 space-y-6 text-center sm:text-left">
+          <div className="flex flex-col items-center gap-4 sm:flex-row">
+            <div className="ios-app-icon relative h-24 w-24 flex-shrink-0 bg-white">
+              <Image
+                src="/photo-profile.jpeg"
+                alt="Yuda Fahrudin"
+                fill
+                sizes="96px"
+                className="object-cover"
+                priority
+              />
+            </div>
+            <div className="space-y-1">
+              <span className="rounded-full bg-[#007aff]/10 px-3 py-0.5 text-[10px] font-extrabold uppercase tracking-wider text-[#007aff]">
+                DEVELOPER SUPPORT
+              </span>
+              <h2 className="text-2xl font-extrabold tracking-tight text-[#1c1c1e]">
+                Yuda Fahrudin
+              </h2>
+              <p className="text-xs font-semibold text-[#8e8e93]">
+                Full Stack & Mobile Engineer • @yudafhd
+              </p>
+            </div>
           </div>
+
+          <p className="text-sm leading-relaxed text-[#3a3a3c]">
+            Have an app idea, web project, or collaboration in mind? Feel free to reach out directly via email or social channels for quick project discussions.
+          </p>
+
+          <div className="border-t border-[#e5e5ea]/80 pt-6 space-y-3">
+            <a
+              href={primaryEmail}
+              className="ios-active flex w-full items-center justify-center gap-2 rounded-full bg-[#007aff] px-6 py-3 text-sm font-extrabold text-white shadow-md transition-colors hover:bg-[#0062cc]"
+            >
+              <Mail className="h-4 w-4" />
+              Send Email Inquiry
+            </a>
+
+            <div className="grid grid-cols-2 gap-3">
+              {outlineActions.map((action) => (
+                <a
+                  key={action.label}
+                  href={action.href}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="ios-active flex items-center justify-center gap-2 rounded-full bg-[#f2f2f7] px-4 py-2.5 text-xs font-bold text-[#1c1c1e] ring-1 ring-[#e5e5ea] transition-colors hover:bg-[#e5e5ea]"
+                >
+                  <action.icon className="h-4 w-4 text-[#007aff]" />
+                  {action.label}
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Quick Message Form Card */}
+        <section className="ios-card p-6 sm:p-8 space-y-5">
+          <div className="flex items-center gap-2 border-b border-[#e5e5ea]/80 pb-3">
+            <MessageSquare className="h-5 w-5 text-[#007aff]" />
+            <div>
+              <h3 className="text-lg font-extrabold tracking-tight text-[#1c1c1e]">
+                Direct Message
+              </h3>
+              <p className="text-xs text-[#8e8e93]">
+                Send a quick message directly to my inbox.
+              </p>
+            </div>
+          </div>
+
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              const form = e.currentTarget;
+              const msg = (form.elements.namedItem("message") as HTMLTextAreaElement).value;
+              window.location.href = `mailto:ahmadyudafahrudin@gmail.com?subject=Project%20Inquiry&body=${encodeURIComponent(msg)}`;
+            }}
+            className="space-y-4"
+          >
+            <div>
+              <label className="block text-xs font-extrabold uppercase tracking-wider text-[#8e8e93] mb-1">
+                Your Message
+              </label>
+              <textarea
+                name="message"
+                rows={4}
+                required
+                placeholder="Describe your project, timeline, or inquiry..."
+                className="w-full rounded-2xl bg-[#f2f2f7] p-4 text-sm font-medium text-[#1c1c1e] outline-none ring-1 ring-[#e5e5ea] focus:ring-2 focus:ring-[#007aff]"
+              />
+            </div>
+
+            <button
+              type="submit"
+              className="ios-active flex w-full items-center justify-center gap-2 rounded-full bg-[#007aff] px-6 py-3 text-sm font-extrabold text-white shadow-md transition-colors hover:bg-[#0062cc]"
+            >
+              <Send className="h-4 w-4" />
+              <span>Send Message</span>
+            </button>
+          </form>
         </section>
       </main>
 
@@ -74,18 +126,9 @@ export default function ContactPage() {
   );
 }
 
-function MailIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden>
-      <rect x="3" y="5" width="18" height="14" rx="2" />
-      <path d="M3 7.5 12 13l9-5.5" />
-    </svg>
-  );
-}
-
 function LinkedinIcon({ className }: { className?: string }) {
   return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden>
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
       <rect x="3" y="3" width="18" height="18" rx="2" />
       <circle cx="8" cy="8" r="1.6" />
       <path d="M6.6 18v-7H9v7" />
@@ -96,7 +139,7 @@ function LinkedinIcon({ className }: { className?: string }) {
 
 function GithubIcon({ className }: { className?: string }) {
   return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden>
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
       <path d="M12 2C6.5 2 2 6.6 2 12.2c0 4.5 2.9 8.3 6.9 9.6.5.1.6-.2.6-.5v-1.8c-2.8.7-3.3-1.4-3.3-1.4-.5-1.2-1.1-1.5-1.1-1.5-.9-.7.1-.7.1-.7 1 .1 1.5 1.1 1.5 1.1.9 1.6 2.4 1.1 3 .8.1-.7.4-1.1.7-1.4-2.2-.3-4.6-1.2-4.6-5.1 0-1.2.4-2.1 1-2.8-.1-.3-.4-1.3.1-2.7 0 0 .9-.3 2.8 1.1 1.6-.4 3.3-.4 4.9 0 1.9-1.4 2.8-1.1 2.8-1.1.5 1.4.2 2.4.1 2.7.7.7 1.1 1.6 1.1 2.8 0 4-2.4 4.9-4.7 5.2.4.3.7 1 .7 1.9v2.9c0 .3.2.6.7.5 4-1.3 6.9-5 6.9-9.6C22 6.6 17.5 2 12 2Z" />
     </svg>
   );

@@ -1,56 +1,63 @@
 "use client";
 
-import Header from "@/components/play-store/Header";
-import BottomNav from "@/components/play-store/BottomNav";
-import AppCard from "@/components/play-store/AppCard";
+import { useState, useMemo } from "react";
+import Header from "@/components/app-store/Header";
+import BottomNav from "@/components/app-store/BottomNav";
+import AppCardRow from "@/components/app-store/AppCardRow";
+import CategoryFilter from "@/components/app-store/CategoryFilter";
+import AppDetailModal from "@/components/app-store/AppDetailModal";
 import { projects, Project } from "@/data/projects";
 
 export default function Page() {
-  const handleAppClick = (app: Project) => {
-    if (app.liveUrl) {
-      window.open(app.liveUrl, "_blank");
-    } else if (app.repoUrl) {
-      window.open(app.repoUrl, "_blank");
-    }
-  };
+  const [selectedCategory, setSelectedCategory] = useState<string>("All");
+  const [activeProjectModal, setActiveProjectModal] = useState<Project | null>(null);
+
+  const categories = useMemo(() => {
+    const cats = Array.from(new Set(projects.map((p) => p.category)));
+    return ["All", ...cats];
+  }, []);
+
+  const filteredProjects = useMemo(() => {
+    if (selectedCategory === "All") return projects;
+    return projects.filter((p) => p.category === selectedCategory);
+  }, [selectedCategory]);
 
   return (
-    <div className="min-h-screen bg-[#f5f6fa] pb-28 font-sans text-[#111827]">
+    <div className="min-h-screen bg-[#f2f2f7] pb-28 font-sans text-[#1c1c1e]">
       <Header />
 
-      <main className="space-y-8 pt-3">
-        <section className="px-4">
-          <div className="mx-auto max-w-xl space-y-5">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#007aff]">
-                Featured Projects
-              </p>
-              <h1 className="mt-2 text-4xl font-bold tracking-tight text-[#111827]">
-                Built like polished apps.
-              </h1>
-              <p className="mt-2 max-w-lg text-sm leading-6 text-[#6b7280]">
-                A curated list of products, experiments, and tools presented with an App Store-inspired layout.
-              </p>
-            </div>
+      <main className="mx-auto max-w-4xl px-5 space-y-6">
 
-            <div className="space-y-3">
-              {projects.map((app) => (
-                <AppCard
-                  key={app.title}
-                  title={app.title.replace(/\s*\([^)]*\)\s*/g, "")}
-                  developer={app.technologies[0] || "Yuda Fahrudin"}
-                  description={app.description}
-                  category={app.tags?.[0]?.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase())}
-                  image={app.image}
-                  onClick={() => handleAppClick(app)}
-                />
-              ))}
-            </div>
+        {/* Section 2: Category Filter Pills */}
+        <section className="space-y-4 pt-2">
+
+          <CategoryFilter
+            categories={categories}
+            selectedCategory={selectedCategory}
+            onSelectCategory={setSelectedCategory}
+          />
+
+          {/* List of Applications */}
+          <div className="space-y-3 pt-2">
+            {filteredProjects.map((proj, idx) => (
+              <AppCardRow
+                key={proj.id}
+                project={proj}
+                rank={idx + 1}
+                onSelect={(p) => setActiveProjectModal(p)}
+              />
+            ))}
           </div>
         </section>
       </main>
 
       <BottomNav />
+
+      {/* iOS App Details Sheet Modal */}
+      <AppDetailModal
+        project={activeProjectModal}
+        onClose={() => setActiveProjectModal(null)}
+      />
     </div>
   );
 }
