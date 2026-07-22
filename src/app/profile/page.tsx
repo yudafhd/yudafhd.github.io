@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Mail, CheckCircle2, ShieldCheck, Award } from "lucide-react";
+import { Mail, CheckCircle2, Award } from "lucide-react";
 import Header from "@/components/app-store/Header";
 import BottomNav from "@/components/app-store/BottomNav";
 
@@ -38,7 +38,7 @@ export default function ProfilePage() {
     <div className="min-h-screen bg-[#f2f2f7] pb-28 font-sans text-[#1c1c1e]">
       <Header title="Account" subtitle="DEVELOPER PROFILE" />
 
-      <main className="mx-auto max-w-4xl px-5 space-y-6">
+      <main className="mx-auto max-w-2xl px-5 space-y-6">
         {/* Developer Bio Card */}
         <section className="ios-card overflow-hidden p-6 sm:p-8 space-y-6">
           <div className="flex flex-col items-start gap-5 sm:flex-row sm:items-center sm:justify-between">
@@ -53,10 +53,6 @@ export default function ProfilePage() {
                 />
               </div>
               <div className="space-y-0.5">
-                <span className="inline-flex items-center gap-1 rounded-full bg-[#007aff]/10 px-3 py-0.5 text-[10px] font-extrabold uppercase tracking-wider text-[#007aff]">
-                  <ShieldCheck className="h-3 w-3" />
-                  VERIFIED DEVELOPER
-                </span>
                 <h2 className="text-2xl font-extrabold tracking-tight text-[#1c1c1e]">
                   Yuda Fahrudin
                 </h2>

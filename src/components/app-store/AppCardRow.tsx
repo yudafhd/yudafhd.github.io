@@ -1,21 +1,21 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { Star } from "lucide-react";
 import { Project } from "@/data/projects";
 
 type AppCardRowProps = {
   project: Project;
   rank?: number;
-  onSelect: (project: Project) => void;
 };
 
-export default function AppCardRow({ project, rank, onSelect }: AppCardRowProps) {
+export default function AppCardRow({ project, rank }: AppCardRowProps) {
   const [imgError, setImgError] = useState(false);
 
   return (
-    <div
-      onClick={() => onSelect(project)}
+    <Link
+      href={`/app/${project.id}`}
       className="ios-active flex cursor-pointer items-center justify-between gap-4 rounded-2xl bg-white p-3.5 shadow-sm ring-1 ring-[#e5e5ea]/80 transition-all hover:bg-[#fafafa] hover:shadow-md"
     >
       <div className="flex items-center gap-3.5 min-w-0">
@@ -63,18 +63,11 @@ export default function AppCardRow({ project, rank, onSelect }: AppCardRowProps)
       </div>
 
       <div className="flex flex-col items-end gap-1">
-        <button
-          type="button"
-          onClick={(e) => {
-            e.stopPropagation();
-            onSelect(project);
-          }}
-          className="ios-active rounded-full bg-[#f2f2f7] px-5 py-1.5 text-xs font-extrabold text-[#007aff] transition-colors hover:bg-[#007aff] hover:text-white"
-        >
+        <span className="ios-active rounded-full bg-[#f2f2f7] px-5 py-1.5 text-xs font-extrabold text-[#007aff] transition-colors group-hover:bg-[#007aff] group-hover:text-white">
           GET
-        </button>
+        </span>
         <span className="text-[9px] font-semibold text-[#8e8e93]">In-App Links</span>
       </div>
-    </div>
+    </Link>
   );
 }

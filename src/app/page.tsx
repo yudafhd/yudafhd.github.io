@@ -5,12 +5,10 @@ import Header from "@/components/app-store/Header";
 import BottomNav from "@/components/app-store/BottomNav";
 import AppCardRow from "@/components/app-store/AppCardRow";
 import CategoryFilter from "@/components/app-store/CategoryFilter";
-import AppDetailModal from "@/components/app-store/AppDetailModal";
-import { projects, Project } from "@/data/projects";
+import { projects } from "@/data/projects";
 
 export default function Page() {
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
-  const [activeProjectModal, setActiveProjectModal] = useState<Project | null>(null);
 
   const categories = useMemo(() => {
     const cats = Array.from(new Set(projects.map((p) => p.category)));
@@ -26,11 +24,9 @@ export default function Page() {
     <div className="min-h-screen bg-[#f2f2f7] pb-28 font-sans text-[#1c1c1e]">
       <Header />
 
-      <main className="mx-auto max-w-4xl px-5 space-y-6">
-
-        {/* Section 2: Category Filter Pills */}
+      <main className="mx-auto max-w-2xl px-5 space-y-6">
+        {/* Category Filter Pills & App List */}
         <section className="space-y-4 pt-2">
-
           <CategoryFilter
             categories={categories}
             selectedCategory={selectedCategory}
@@ -40,24 +36,13 @@ export default function Page() {
           {/* List of Applications */}
           <div className="space-y-3 pt-2">
             {filteredProjects.map((proj, idx) => (
-              <AppCardRow
-                key={proj.id}
-                project={proj}
-                rank={idx + 1}
-                onSelect={(p) => setActiveProjectModal(p)}
-              />
+              <AppCardRow key={proj.id} project={proj} rank={idx + 1} />
             ))}
           </div>
         </section>
       </main>
 
       <BottomNav />
-
-      {/* iOS App Details Sheet Modal */}
-      <AppDetailModal
-        project={activeProjectModal}
-        onClose={() => setActiveProjectModal(null)}
-      />
     </div>
   );
 }

@@ -31,7 +31,7 @@ export default function Header({ title, subtitle }: HeaderProps) {
   };
 
   return (
-    <header className="mx-auto max-w-4xl px-5 pt-8 pb-4">
+    <header className="mx-auto max-w-2xl px-5 pt-8 pb-4">
       <div className="flex items-center justify-between border-b border-[#e5e5ea]/60 pb-5">
         <div>
           <p className="text-[11px] font-bold uppercase tracking-wider text-[#8e8e93]">
